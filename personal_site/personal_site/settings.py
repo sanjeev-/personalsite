@@ -75,7 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "personal_site.wsgi.application"
 
 # Graphene
-GRAPHENE = {"SCHEMA": "api.schema.schema"}  # Where your Graphene schema lives
+GRAPHENE = {"SCHEMA": "schema.schema"}  # Where your Graphene schema lives
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
