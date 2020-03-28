@@ -5,3 +5,9 @@ personal_site/personal_site/__pycache__/
 personal_site/api/migrations/__pycache__/
 personal_site/api/__pycache__/
 personal_site/api/models/__pycache__/
+personal_site/api/__pycache__/*
+*.pyc
+**.pyc
+/**/*.pyc
+personal_site/api/schema/__pycache__/
+personal_site/__pycache__/
