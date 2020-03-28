@@ -1,3 +1,7 @@
 client/node_modules/
 node_modules/
-
+personal_site/db*
+personal_site/personal_site/__pycache__/
+personal_site/api/migrations/__pycache__/
+personal_site/api/__pycache__/
+personal_site/api/models/__pycache__/
