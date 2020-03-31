@@ -36,12 +36,6 @@ class UserManager(BaseUserManager):
         return user
 
 
-# hook in the New Manager to our Model
-class User(AbstractBaseUser):  # from step 2
-    ...
-    objects = UserManager()
-
-
 class User(AbstractBaseUser):
     email = models.EmailField(verbose_name="email address", max_length=255, unique=True)
     active = models.BooleanField(default=True)
