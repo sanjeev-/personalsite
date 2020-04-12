@@ -1,4 +1,5 @@
 import React from "react";
+import Drawing from "./Drawing";
 
 var Immutable = require("immutable");
 
@@ -7,7 +8,7 @@ class DrawArea extends React.Component {
     super(props);
     this.state = {
       isDrawing: false,
-      lines: Immutable.List()
+      lines: Immutable.List(),
     };
   }
 
@@ -22,17 +23,17 @@ class DrawArea extends React.Component {
     this.setState({ isDrawing: false });
   };
 
-  handleMouseDown = mouseEvent => {
+  handleMouseDown = (mouseEvent) => {
     if (mouseEvent.button !== 0) {
       return;
     }
 
     const point = this.relativeCoordinatesForEvent(mouseEvent);
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return {
         lines: prevState.lines.push(Immutable.List([point])),
-        isDrawing: true
+        isDrawing: true,
       };
     });
   };
@@ -41,28 +42,37 @@ class DrawArea extends React.Component {
     const boundingRect = this.refs.drawArea.getBoundingClientRect();
     return new Immutable.Map({
       x: mouseEvent.clientX - boundingRect.left,
-      y: mouseEvent.clientY - boundingRect.top
+      y: mouseEvent.clientY - boundingRect.top,
     });
   }
 
-  handleMouseMove(mouseEvent) {
+  handleMouseMove = (mouseEvent) => {
     if (!this.state.isDrawing) {
       return;
     }
 
     const point = this.relativeCoordinatesForEvent(mouseEvent);
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return {
-        lines: prevState.lines.updateIn([prevState.lines.size - 1], line =>
+        lines: prevState.lines.updateIn([prevState.lines.size - 1], (line) =>
           line.push(point)
-        )
+        ),
       };
     });
-  }
+  };
 
   render() {
-    return <div ref="drawArea" onMouseDown={this.handleMouseDown} />;
+    return (
+      <div
+        className="drawArea"
+        ref="drawArea"
+        onMouseDown={this.handleMouseDown}
+        onMouseMove={this.handleMouseMove}
+      >
+        <Drawing lines={this.state.lines} />
+      </div>
+    );
   }
 }
 

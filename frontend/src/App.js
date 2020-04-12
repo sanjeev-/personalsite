@@ -1,6 +1,6 @@
 import React from "react";
 import DrawArea from "./components/DrawArea";
-import Drawing from "./components/Drawing";
+import Title from "./components/styledBaseComponents/Title";
 import "./App.css";
 
 class MainApp extends React.Component {
@@ -8,10 +8,8 @@ class MainApp extends React.Component {
     return (
       <div className="MainApp">
         <body>
-          <p>Draw here!</p>
-          <DrawArea>
-            <Drawing />
-          </DrawArea>
+          <Title>Draw here!</Title>
+          <DrawArea />
         </body>
       </div>
     );
