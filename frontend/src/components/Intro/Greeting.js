@@ -1,8 +1,15 @@
 import React from "react";
 import Title from "../styledBaseComponents/Title";
+import ImpactTitle from "../styledBaseComponents/ImpactTitle";
 
 const Greeting = () => {
-  return <Title>Hi, this is Sanjeev Sreetharan's personal website</Title>;
+  return (
+    <React.Fragment>
+      <Title>Hi, this is </Title>
+      <ImpactTitle>Sanjeev Sreetharan's</ImpactTitle>
+      <Title> personal website</Title>
+    </React.Fragment>
+  );
 };
 
 export default Greeting;

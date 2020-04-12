@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 // Create a Title component that'll render an <h1> tag with some styles
-const Title = styled.h1`
+const ImpactTitle = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: black;
+  color: rgba(255, 46, 99, 1);
 `;
 
-export default Title;
+export default ImpactTitle;
