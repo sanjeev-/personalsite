@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
-}
-
 .drawArea {
   width: 400px;
   height: 400px;
