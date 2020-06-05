@@ -17,11 +17,16 @@ class MainApp extends React.Component {
             padding={["40px"]}
             margin="5px"
           >
-            <Flex flexDirection="row" justifyContent="center" px={5}>
-              <Flex px={5}>
+            <Flex
+              flexDirection={["column", "row", "row"]}
+              justifyContent="center"
+              px={[0, 5, 5]}
+              py={[2, 0, 0]}
+            >
+              <Flex px={[0, 5, 5]} py={[2, 0, 0]}>
                 <DrawAreaConnector />
               </Flex>
-              <Flex px={5}>
+              <Flex px={[0, 5, 5]} py={[2, 0, 0]}>
                 <Intro />
               </Flex>
             </Flex>
