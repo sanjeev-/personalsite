@@ -12,6 +12,12 @@ body {
   src: local("Junicode"), url("./fonts/Junicode.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "WorkSans-Light";
+  src: local("WorkSans-Light"),
+    url("./fonts/WorkSans-Light.ttf") format("truetype");
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
