@@ -1,5 +1,5 @@
 import React from "react";
-import DrawArea from "./components/DrawArea";
+import DrawAreaConnector from "./components/DrawAreaConnector";
 import Flex from "./styles/styles.js";
 import Intro from "./components/Intro/IntroMain";
 import "./App.css";
@@ -19,7 +19,7 @@ class MainApp extends React.Component {
           >
             <Flex flexDirection="row" justifyContent="center" px={5}>
               <Flex px={5}>
-                <DrawArea />
+                <DrawAreaConnector />
               </Flex>
               <Flex px={5}>
                 <Intro />
