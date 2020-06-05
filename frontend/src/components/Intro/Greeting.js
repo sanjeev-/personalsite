@@ -10,7 +10,6 @@ const Greeting = () => {
       lineHeight={0}
       alignItems="left"
       textAlign="left"
-      pl={[2, 3, 7]}
     >
       <Title>Hi, this is </Title>
       <ImpactTitle>Sanjeev Sreetharan's</ImpactTitle>
