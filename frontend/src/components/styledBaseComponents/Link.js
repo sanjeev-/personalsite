@@ -6,6 +6,10 @@ const Link = styled.h1`
   text-align: center;
   color: black;
   font-family: "WorkSans-Light";
+  &:hover {
+    background-color: black;
+    color: #08d9d6;
+  }
 `;
 
 export default Link;
