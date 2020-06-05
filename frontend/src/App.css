@@ -3,7 +3,7 @@
 }
 
 .drawArea {
-  background-color: rgba(234, 234, 234, 1);
+  background-color: rgba(255, 239, 213, 1);
   width: 725px;
   height: 725px;
   border: 0px solid black;
@@ -14,7 +14,7 @@
 .path {
   fill: none;
   stroke-width: 5px;
-  stroke: red;
+  stroke: rgba(255, 46, 99, 1);
   stroke-linejoin: round;
   stroke-linecap: round;
 }

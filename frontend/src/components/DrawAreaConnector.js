@@ -9,7 +9,7 @@ const DrawAreaConnector = () => {
   }, []);
 
   return (
-    <Flex opacity={fadeIn ? 1 : 0} transition="2s opacity ease-in">
+    <Flex opacity={fadeIn ? 1 : 0} transition="1s opacity ease-in">
       <DrawArea />
     </Flex>
   );
