@@ -1,14 +1,21 @@
 import React from "react";
 import Title from "../styledBaseComponents/Title";
 import ImpactTitle from "../styledBaseComponents/ImpactTitle";
+import Flex from "../../styles/styles.js";
 
 const Greeting = () => {
   return (
-    <React.Fragment>
+    <Flex
+      flexDirection="column"
+      lineHeight={0}
+      alignItems="left"
+      textAlign="left"
+      pl={[2, 3, 7]}
+    >
       <Title>Hi, this is </Title>
       <ImpactTitle>Sanjeev Sreetharan's</ImpactTitle>
       <Title> personal website</Title>
-    </React.Fragment>
+    </Flex>
   );
 };
 
