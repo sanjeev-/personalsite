@@ -1,6 +1,7 @@
 import React from "react";
 import DrawArea from "./components/DrawArea";
-import Title from "./components/styledBaseComponents/Title";
+import Flex from "./components/styledBaseComponents/Flex";
+import Intro from "./components/Intro/IntroMain";
 import "./App.css";
 
 class MainApp extends React.Component {
@@ -8,8 +9,15 @@ class MainApp extends React.Component {
     return (
       <div className="MainApp">
         <body>
-          <Title>Draw here!</Title>
-          <DrawArea />
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            padding={["40px"]}
+            margin="5px"
+          >
+            <DrawArea />
+            <Intro />
+          </Flex>
         </body>
       </div>
     );
