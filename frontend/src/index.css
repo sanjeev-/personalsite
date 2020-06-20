@@ -18,6 +18,18 @@ body {
     url("./fonts/WorkSans-Light.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "WorkSans-Bold";
+  src: local("WorkSans-Bold"),
+    url("./fonts/WorkSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "WorkSans-Black";
+  src: local("WorkSans-Black"),
+    url("./fonts/WorkSans-Black.ttf") format("truetype");
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
