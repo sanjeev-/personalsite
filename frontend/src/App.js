@@ -10,23 +10,21 @@ class MainApp extends React.Component {
       <div className="MainApp">
         <body>
           <Flex
-            justifyContent="center"
-            alignItems="center"
-            height="100%"
+            // justifyContent="center"
+            // alignItems="center"
+            minHeight="100vh"
             width="100%"
-            padding={["40px"]}
-            margin="5px"
           >
             <Flex
               flexDirection={["column", "row", "row"]}
-              justifyContent="center"
-              px={[0, 5, 5]}
-              py={[2, 0, 0]}
+              width="100%"
+              justifyContent="space-around"
+              pt={["50px"]}
             >
-              <Flex px={[0, 5, 5]} py={[2, 0, 0]}>
+              <Flex>
                 <DrawAreaConnector />
               </Flex>
-              <Flex px={[0, 5, 5]} py={[2, 0, 0]}>
+              <Flex>
                 <Intro />
               </Flex>
             </Flex>
