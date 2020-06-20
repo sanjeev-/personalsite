@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
-import ProjectsConnector from "./components/projects/ProjectsConnector";
+import ProjectsRouter from "./components/projects/ProjectsRouter";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -19,7 +19,7 @@ const routing = (
   <Router>
     <div>
       <Route exact path="/" component={App} />
-      <Route path="/projects" component={ProjectsConnector} />
+      <Route path="/projects" component={ProjectsRouter} />
     </div>
   </Router>
 );
