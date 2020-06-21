@@ -14,6 +14,34 @@ import "./fonts/WorkSans-Thin.ttf";
 import "./fonts/WorkSans-Black.ttf";
 import "./fonts/WorkSans-Bold.ttf";
 import "./fonts/WorkSans-Light.ttf";
+import gql from "graphql-tag";
+
+import { ApolloClient } from "apollo-client";
+import { HttpLink } from "apollo-link-http";
+import { InMemoryCache } from "apollo-cache-inmemory";
+
+const cache = new InMemoryCache();
+const link = new HttpLink({
+  uri: "http://localhost:8000/graphql",
+});
+
+const GET_ZORA_SNIPPETS = gql`
+  query {
+    retrieveZoraSnippets {
+      date
+      title
+      path
+    }
+  }
+`;
+
+const client = new ApolloClient({ cache, link });
+
+client
+  .query({
+    query: GET_ZORA_SNIPPETS,
+  })
+  .then((result) => console.log(result));
 
 const routing = (
   <Router>
