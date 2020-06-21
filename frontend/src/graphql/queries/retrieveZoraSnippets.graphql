@@ -1,0 +1,7 @@
+query {
+  retrieveZoraSnippets {
+    date
+    title
+    path
+  }
+}
