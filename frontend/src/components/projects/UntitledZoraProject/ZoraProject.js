@@ -20,18 +20,33 @@ const GET_ZORA_SNIPPETS = gql`
 `;
 
 const ZoraProject = () => {
-  const [zoraSnippet, setZoraSnippet] = useState(null);
-  // const { loading, error, data } = useQuery(GET_ZORA_SNIPPETS);
-  return (
-    <Flex
-      minHeight="100vh"
-      minWidth="100vw"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <video src={zoraVid} loop autoPlay muted />
-    </Flex>
-  );
+  const { loading, error, data } = useQuery(GET_ZORA_SNIPPETS);
+  const [zoraSnippet, setZoraSnippet] = useState({
+    path:
+      "https://sanjeev-personal-site.s3.amazonaws.com/zora-snippets/2020_04_10_playing.mov",
+  });
+  const getZoraVideo = () => {
+    const snippets = data?.retrieveZoraSnippets;
+    const randomSnippet = snippets[Math.floor(Math.random() * snippets.length)];
+    setZoraSnippet(randomSnippet);
+  };
+  if (loading) {
+    return <p>Loading ...</p>;
+  } else {
+    return (
+      <Flex
+        minHeight="100vh"
+        minWidth="100vw"
+        justifyContent="center"
+        alignItems="center"
+        onClick={() => {
+          getZoraVideo();
+        }}
+      >
+        <video src={zoraSnippet.path} loop autoPlay muted />
+      </Flex>
+    );
+  }
 };
 
 export default ZoraProject;

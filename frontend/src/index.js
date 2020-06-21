@@ -17,6 +17,7 @@ import "./fonts/WorkSans-Light.ttf";
 import gql from "graphql-tag";
 
 import { ApolloClient } from "apollo-client";
+import { ApolloProvider } from "@apollo/react-hooks";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
@@ -44,12 +45,14 @@ client
   .then((result) => console.log(result));
 
 const routing = (
-  <Router>
-    <div>
-      <Route exact path="/" component={App} />
-      <Route path="/projects" component={ProjectsRouter} />
-    </div>
-  </Router>
+  <ApolloProvider client={client}>
+    <Router>
+      <div>
+        <Route exact path="/" component={App} />
+        <Route path="/projects" component={ProjectsRouter} />
+      </div>
+    </Router>
+  </ApolloProvider>
 );
 
 ReactDOM.render(routing, document.getElementById("root"));
