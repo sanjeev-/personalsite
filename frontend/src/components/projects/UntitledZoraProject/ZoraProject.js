@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Flex from "../../../styles/styles.js";
 import Title from "../../styledBaseComponents/Title";
 import SubHead from "../../styledBaseComponents/SubHead";
-import Text from "../../styledBaseComponents/Text";
+import WhiteText from "../../styledBaseComponents/WhiteText";
+import moment from "moment";
 import Header from "../../Header.js";
 import zoraVid from "./videos/2020_06_14_hiking.mov";
 import retrieveZoraSnippets from "../../../graphql/queries/retrieveZoraSnippets.graphql";
@@ -43,6 +44,17 @@ const ZoraProject = () => {
           getZoraVideo();
         }}
       >
+        <Flex
+          position="absolute"
+          justifyContent="center"
+          bottom="25px"
+          flexDirection="column"
+        >
+          <WhiteText>{zoraSnippet.title}</WhiteText>
+          <WhiteText>
+            {moment(zoraSnippet.date).format("MMMM Do, YYYY")}
+          </WhiteText>
+        </Flex>
         <video src={zoraSnippet.path} loop autoPlay muted />
       </Flex>
     );
