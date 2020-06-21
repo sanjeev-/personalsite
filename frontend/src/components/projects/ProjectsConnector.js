@@ -20,9 +20,15 @@ const ProjectsConnector = () => {
       <Title>Projects</Title>
       <Flex borderBottom="2px solid" borderColor="#08D9D6" />
       <Flex flexDirection="row" minHeight="100px" alignItems="center">
-        <SubHead>Untitled Zora Project</SubHead>
+        <SubHead
+          onClick={() => {
+            window.location.pathname = "/projects/zora";
+          }}
+        >
+          Untitled Zora Project
+        </SubHead>
         <Flex pl={3}>
-          <Text>Zora's life, one three second video at a time</Text>
+          <Text>Zora's life, three seconds at a time</Text>
         </Flex>
       </Flex>
     </Flex>
