@@ -4,15 +4,20 @@ FROM node:8
 WORKDIR /app/frontend
 
 # Install dependencies
-# COPY package.json yarn.lock /app/
+# install app dependencies
+COPY package.json .
+# COPY package-lock.json .
 
-RUN npm install
+RUN npm install 
+RUN npm install react-scripts@3.4.1 -g
 
 # Add rest of the client code
-COPY . /app/frontend
+COPY . .
 
-CMD ls
+# Print out directory structure
+RUN echo $(ls -1 .)
 
 EXPOSE 3000
 
-CMD npm start
+# start app
+CMD ["npm", "start"]
