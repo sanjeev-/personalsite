@@ -14,8 +14,6 @@ RUN npm install react-scripts@3.4.1 -g
 # Add rest of the client code
 COPY . .
 
-# Print out directory structure
-RUN echo $(ls -1 .)
 
 EXPOSE 3000
 
