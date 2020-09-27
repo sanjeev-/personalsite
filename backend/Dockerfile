@@ -4,6 +4,10 @@ FROM python:3.8.3-alpine
 # Set working dir
 WORKDIR /app/backend
 
+# install psycopg2 dependencies
+RUN apk update \
+    && apk add postgresql-dev gcc python3-dev musl-dev
+
 # Install requirements
 COPY requirements.txt .
 RUN pip3 install --upgrade pip -r requirements.txt
