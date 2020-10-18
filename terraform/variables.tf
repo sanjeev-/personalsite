@@ -1,13 +1,23 @@
 # aws config
 
 variable "aws_region" {
-  type = string
+  type        = string
   description = "Administrator user name for virtual machine"
 }
 
 variable "aws_profile" {
-  type = string
+  type        = string
   description = "AWS profile to use"
+}
+
+variable "aws_access_key" {
+  type        = string
+  description = "Aws access key"
+}
+
+variable "aws_secret_key" {
+  type        = string
+  description = "Aws secret key"
 }
 
 # networking

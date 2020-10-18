@@ -12,3 +12,4 @@ personal_site/api/__pycache__/*
 personal_site/api/schema/__pycache__/
 personal_site/__pycache__/
 terraform/.terraform/**/*
+terraform/*.backup
