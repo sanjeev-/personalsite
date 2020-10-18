@@ -95,3 +95,10 @@ variable "rds_instance_class" {
   description = "RDS instance type"
   default     = "db.t2.micro"
 }
+
+# domain
+
+variable "certificate_arn" {
+  description = "AWS Certificate Manager ARN for validated domain"
+  default     = "ADD YOUR ARN HERE"
+}
