@@ -10,15 +10,6 @@ variable "aws_profile" {
   description = "AWS profile to use"
 }
 
-variable "aws_access_key" {
-  type        = string
-  description = "Aws access key"
-}
-
-variable "aws_secret_key" {
-  type        = string
-  description = "Aws secret key"
-}
 
 # networking
 
