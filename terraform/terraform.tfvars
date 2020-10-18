@@ -1,7 +1,5 @@
 aws_region = "us-east-1"
 aws_profile = "sanjeev_personal"
-aws_access_key = "AKIAJ2AJUSGUL5BW44HQ"
-aws_secret_key = ""
 availability_zones = ["us-east-1a", "us-east-1b"]
 public_subnet_1_cidr = "10.0.1.0/24"
 public_subnet_2_cidr = "10.0.2.0/24"
