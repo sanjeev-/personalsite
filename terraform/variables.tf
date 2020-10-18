@@ -61,6 +61,9 @@ variable "instance_type" {
 variable "docker_image_url_django" {
   description = "Docker image to run in the ECS cluster"
 }
+variable "docker_image_url_nginx" {
+  description = "Ngiinx docker image to run in the ECS cluster"
+}
 variable "app_count" {
   description = "Number of Docker containers to run"
 }
