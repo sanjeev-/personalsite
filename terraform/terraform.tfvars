@@ -9,7 +9,7 @@ health_check_path = "/ping/"
 ecs_cluster_name = "production"
 log_retention_in_days = 30
 ssh_pubkey_file = "~/.ssh/id_rsa.pub"
-amis = {us-east-1 = "ami-0667a9cc6a93f50fe"}
+amis = {us-east-1 = "ami-0669eafef622afea1"}
 instance_type = "t2.micro"
 docker_image_url_django = "501421885392.dkr.ecr.us-east-1.amazonaws.com/personal-site:latest"
 app_count = 2
