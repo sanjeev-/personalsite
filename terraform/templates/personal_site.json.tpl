@@ -34,6 +34,10 @@
     {
       "name": "RDS_PORT",
       "value": "5432"
+    },
+    {
+      "name": "SECRET_KEY",
+      "value": "foo"
     }
   ],
     "logConfiguration": {
