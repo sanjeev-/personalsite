@@ -31,6 +31,10 @@ _ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
 
 ALLOWED_HOSTS = _ALLOWED_HOSTS if _ALLOWED_HOSTS is not None else ["*"]
 
+# Static files
+STATIC_URL = "/staticfiles/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 
 # Application definition
 
