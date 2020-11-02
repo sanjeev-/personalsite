@@ -30,6 +30,7 @@ resource "aws_alb_listener" "ecs-alb-http-listener" {
   load_balancer_arn = aws_lb.production.id
   port              = "80"
   protocol          = "HTTP"
+  certificate_arn   = var.certificate_arn
   depends_on        = [aws_alb_target_group.default-target-group]
 
   default_action {
