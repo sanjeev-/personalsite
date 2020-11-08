@@ -38,6 +38,10 @@
     {
       "name": "SECRET_KEY",
       "value": "foo"
+    },
+    {
+    "name": "ALLOWED_HOSTS",
+    "value": "${allowed_hosts}"
     }
   ],
     "mountPoints": [

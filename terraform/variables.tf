@@ -105,3 +105,8 @@ variable "certificate_arn" {
   description = "AWS Certificate Manager ARN for validated domain"
   default     = "arn:aws:acm:us-east-1:501421885392:certificate/7e704236-3076-4653-91cb-f4e02f1b89a5"
 }
+
+variable "allowed_hosts" {
+  description = "Domain name for allowed hosts"
+  default     = ".hellosanjeev.com"
+}

@@ -21,13 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
+# DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = False
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
 
 # ALLOWED_HOSTS = ["*"]
-_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
+_ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
 ALLOWED_HOSTS = _ALLOWED_HOSTS if _ALLOWED_HOSTS is not None else ["*"]
 
