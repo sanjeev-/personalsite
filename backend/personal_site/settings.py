@@ -30,7 +30,7 @@ DEBUG = False
 # ALLOWED_HOSTS = ["*"]
 _ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
-ALLOWED_HOSTS = _ALLOWED_HOSTS if _ALLOWED_HOSTS is not None else ["*"]
+ALLOWED_HOSTS = [_ALLOWED_HOSTS] if _ALLOWED_HOSTS is not None else ["*"]
 
 # Static files
 STATIC_URL = "/staticfiles/"
