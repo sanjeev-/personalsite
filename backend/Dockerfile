@@ -19,6 +19,8 @@ COPY . .
 EXPOSE 8000
 
 # Run entrypoint.sh (make sure postgres loaded)
-ENTRYPOINT ["sh","./.entrypoint.sh"]
+# ENTRYPOINT ["sh","./.entrypoint.sh"]
+
+CMD python manage.py collectstatic --no-input
 
 CMD python3 manage.py runserver 0.0.0.0:8000

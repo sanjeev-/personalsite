@@ -11,3 +11,15 @@ personal_site/api/__pycache__/*
 /**/*.pyc
 personal_site/api/schema/__pycache__/
 personal_site/__pycache__/
+terraform/.terraform/**/*
+terraform/*.backup
+backend/__pycache__/
+backend/api/.admin.pyc.icloud
+backend/api/__pycache__/
+backend/api/migrations/__pycache__/
+backend/api/models/.user.pyc.icloud
+backend/api/models/__pycache__/
+backend/api/schema/__pycache__/
+backend/personal_site/.settings.pyc.icloud
+backend/personal_site/.urls.pyc.icloud
+backend/personal_site/__pycache__/

@@ -26,5 +26,5 @@ s3transfer==0.3.3
 traitlets==4.3.3
 typing==3.7.4.1
 urllib3==1.25.8
-gunicorn
+gunicorn==20.0.4
 psycopg2-binary==2.8.5

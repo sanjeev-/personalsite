@@ -21,11 +21,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
+# DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = False
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+
+# ALLOWED_HOSTS = ["*"]
+_ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
+
+ALLOWED_HOSTS = [_ALLOWED_HOSTS] if _ALLOWED_HOSTS is not None else ["*"]
+
+# Static files
+STATIC_URL = "/staticfiles/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
 # Application definition
@@ -43,6 +52,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "personal_site.middleware.HealthCheckMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -80,16 +90,30 @@ GRAPHENE = {"SCHEMA": "schema.schema"}  # Where your Graphene schema lives
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.environ.get("SQL_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")),
-        "USER": os.environ.get("SQL_USER", "user"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
-        "HOST": os.environ.get("SQL_HOST", "localhost"),
-        "PORT": os.environ.get("SQL_PORT", "5432"),
+if "RDS_DB_NAME" in os.environ:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": os.environ["RDS_DB_NAME"],
+            "USER": os.environ["RDS_USERNAME"],
+            "PASSWORD": os.environ["RDS_PASSWORD"],
+            "HOST": os.environ["RDS_HOSTNAME"],
+            "PORT": os.environ["RDS_PORT"],
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+            "NAME": os.environ.get(
+                "SQL_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")
+            ),
+            "USER": os.environ.get("SQL_USER", "user"),
+            "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+            "HOST": os.environ.get("SQL_HOST", "localhost"),
+            "PORT": os.environ.get("SQL_PORT", "5432"),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
