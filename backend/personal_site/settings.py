@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from django.core.management.utils import get_random_secret_key
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", default=get_random_secret_key())
 
 # DEBUG = int(os.environ.get("DEBUG", default=0))
 DEBUG = False
@@ -31,10 +33,6 @@ DEBUG = False
 _ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
 ALLOWED_HOSTS = [_ALLOWED_HOSTS] if _ALLOWED_HOSTS is not None else ["*"]
-
-# Static files
-STATIC_URL = "/staticfiles/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
 # Application definition
@@ -53,7 +51,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "personal_site.middleware.HealthCheckMiddleware",
-    "django.middleware.security.SecurityMiddleware",
+    # "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -83,6 +82,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "personal_site.wsgi.application"
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = "/staticfiles/"
 
 # Graphene
 GRAPHENE = {"SCHEMA": "schema.schema"}  # Where your Graphene schema lives
@@ -143,3 +145,6 @@ USE_TZ = True
 
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+# Static files
+
