@@ -1,6 +1,10 @@
 # pull official base image
 FROM python:3.8.3-alpine
 
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
 # Set working dir
 WORKDIR /app/backend
 
@@ -23,4 +27,5 @@ EXPOSE 8000
 
 CMD python manage.py collectstatic --no-input
 
-CMD python3 manage.py runserver 0.0.0.0:8000
+CMD gunicorn personal_site.wsgi:application --bind 0.0.0.0:8000
+
