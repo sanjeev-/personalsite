@@ -25,7 +25,7 @@ EXPOSE 8000
 # Run entrypoint.sh (make sure postgres loaded)
 # ENTRYPOINT ["sh","./.entrypoint.sh"]
 
-CMD python manage.py collectstatic --no-input
+# CMD python manage.py collectstatic --no-input
 
 CMD gunicorn personal_site.wsgi:application --bind 0.0.0.0:8000
 
