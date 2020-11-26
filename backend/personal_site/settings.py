@@ -34,10 +34,6 @@ _ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
 ALLOWED_HOSTS = [_ALLOWED_HOSTS] if _ALLOWED_HOSTS is not None else ["*"]
 
-# Static files
-STATIC_URL = "/staticfiles/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
 
 # Application definition
 
@@ -87,6 +83,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "personal_site.wsgi.application"
 
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = "/staticfiles/"
+
 # Graphene
 GRAPHENE = {"SCHEMA": "schema.schema"}  # Where your Graphene schema lives
 
@@ -130,8 +129,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -148,3 +145,6 @@ USE_TZ = True
 
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+# Static files
+
