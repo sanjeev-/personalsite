@@ -1,10 +1,19 @@
 import React from "react";
 import Flex from "../styles/styles.js";
+import Text from "./styledBaseComponents/Text";
+import { colors } from "../designSystem/theme";
 
 const Header = () => {
   return (
-    <Flex>
-      <Flex height="75px" width="75px" bg="rgba(255, 239, 213, 1)" />
+    <Flex
+      width="100%"
+      backgroundColor={colors.grey[2]}
+      justifyContent="space-between"
+    >
+      <Text>SSS</Text>
+      <Text>Projects</Text>
+      <Text>Snippets</Text>
+      <Text>About</Text>
     </Flex>
   );
 };
