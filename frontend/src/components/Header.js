@@ -8,13 +8,15 @@ const Header = () => {
       backgroundColor={colors.grey[2]}
       justifyContent="space-between"
     >
-      <Flex>
+      <Flex px={4}>
         <Text>SSS</Text>
       </Flex>
-      <Flex>
-        <Text>Projects</Text>
-        <Text>Snippets</Text>
-        <Text>About</Text>
+      <Flex px={4}>
+        {["Projects", "Snippets", "About"].map((object, i) => (
+          <Flex px={2}>
+            <Text>{object}</Text>
+          </Flex>
+        ))}
       </Flex>
     </Flex>
   );
