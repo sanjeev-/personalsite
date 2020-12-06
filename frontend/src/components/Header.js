@@ -1,8 +1,7 @@
 import React from "react";
-import Flex from "../styles/styles.js";
 import Text from "./styledBaseComponents/Text";
 import { colors } from "../designSystem/theme";
-
+import { Flex } from "../designSystem";
 const Header = () => {
   return (
     <Flex
@@ -10,10 +9,14 @@ const Header = () => {
       backgroundColor={colors.grey[2]}
       justifyContent="space-between"
     >
-      <Text>SSS</Text>
-      <Text>Projects</Text>
-      <Text>Snippets</Text>
-      <Text>About</Text>
+      <Flex>
+        <Text>SSS</Text>
+      </Flex>
+      <Flex>
+        <Text>Projects</Text>
+        <Text>Snippets</Text>
+        <Text>About</Text>
+      </Flex>
     </Flex>
   );
 };

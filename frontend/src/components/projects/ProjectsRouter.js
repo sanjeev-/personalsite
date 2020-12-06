@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Link, Switch, BrowserRouter as Router } from "react-router-dom";
-import Flex from "../../styles/styles.js";
+import { Flex } from "../../designSystem";
 import ProjectsConnector from "./ProjectsConnector";
 import ZoraProject from "./UntitledZoraProject/ZoraProject";
 

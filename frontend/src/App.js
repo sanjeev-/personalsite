@@ -1,5 +1,5 @@
 import React from "react";
-import Flex from "./styles/styles.js";
+import { Flex } from "./designSystem";
 import Intro from "./components/Intro/IntroMain";
 import Header from "./components/Header";
 
@@ -12,12 +12,7 @@ class MainApp extends React.Component {
       <div className="MainApp">
         <body>
           <Flex backgroundColor={colors.grey[2]} minHeight="100vh" width="100%">
-            <Flex
-              flexDirection={"column"}
-              width="100%"
-              justifyContent="space-around"
-              pt={["50px"]}
-            >
+            <Flex flexDirection={"column"} width="100%">
               <Header />
               <Flex>
                 <Intro />

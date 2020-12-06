@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Flex from "../../../styles/styles.js";
+import { Flex } from "../../../designSystem";
 import Title from "../../styledBaseComponents/Title";
 import SubHead from "../../styledBaseComponents/SubHead";
 import WhiteText from "../../styledBaseComponents/WhiteText";
