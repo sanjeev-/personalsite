@@ -1,7 +1,6 @@
 import React from "react";
-import Text from "./styledBaseComponents/Text";
 import { colors } from "../designSystem/theme";
-import { Flex } from "../designSystem";
+import { Flex, Text } from "../designSystem";
 const Header = () => {
   return (
     <Flex

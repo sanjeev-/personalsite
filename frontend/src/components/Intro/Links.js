@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "../styledBaseComponents/Link";
-import Flex from "../../styles/styles.js";
+import { Flex, Link } from "../../designSystem";
 import { ROUTE_PROJECTS_BASE } from "../../constants/route_constants";
 
 const Links = () => {

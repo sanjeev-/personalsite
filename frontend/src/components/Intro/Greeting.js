@@ -1,7 +1,5 @@
 import React from "react";
-import Title from "../styledBaseComponents/Title";
-import ImpactTitle from "../styledBaseComponents/ImpactTitle";
-import { Flex } from "../../designSystem";
+import { Flex, ImpactTitle, Title } from "../../designSystem";
 
 const Greeting = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Greeting from "./Greeting";
 import Links from "./Links";
-import Flex from "../../styles/styles.js";
+import { Flex } from "../../designSystem";
 
 const Intro = () => {
   return (
