@@ -25,3 +25,4 @@ backend/personal_site/.urls.pyc.icloud
 backend/personal_site/__pycache__/
 ../terraform/terraform.tfstate
 /**/*.tfstate
+terraform/terraform.tfstate

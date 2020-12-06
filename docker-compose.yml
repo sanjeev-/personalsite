@@ -17,6 +17,8 @@ services:
     tty: true
     ports:
       - 3000:3000
+    volumes:
+      - ./frontend:/app/frontend:cached
 
   backend:
     build:
@@ -31,6 +33,8 @@ services:
       - db
     environment:
       - ROOFTOP_VERSION=dev
+    volumes:
+      - ./backend:/app/backend:cached
     stdin_open: true
     tty: true
 

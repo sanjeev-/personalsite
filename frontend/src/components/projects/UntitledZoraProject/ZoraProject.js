@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Flex from "../../../styles/styles.js";
-import Title from "../../styledBaseComponents/Title";
-import SubHead from "../../styledBaseComponents/SubHead";
-import WhiteText from "../../styledBaseComponents/WhiteText";
+import { Flex, Title, SubHead, WhiteText } from "../../../designSystem";
 import moment from "moment";
 import Header from "../../Header.js";
 import zoraVid from "./videos/2020_06_14_hiking.mov";

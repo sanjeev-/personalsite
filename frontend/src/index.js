@@ -23,7 +23,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: "http://localhost:8000/graphql",
+  uri: "https://api.hellosanjeev.com/graphql",
 });
 
 const GET_ZORA_SNIPPETS = gql`
