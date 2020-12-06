@@ -1,6 +1,5 @@
 import React from "react";
 import { Flex } from "./designSystem";
-import Intro from "./components/Intro/IntroMain";
 import Header from "./components/Header";
 
 import { colors } from "./designSystem/theme";
@@ -14,9 +13,7 @@ class MainApp extends React.Component {
           <Flex backgroundColor={colors.grey[2]} minHeight="100vh" width="100%">
             <Flex flexDirection={"column"} width="100%">
               <Header />
-              <Flex>
-                <Intro />
-              </Flex>
+              <Flex></Flex>
             </Flex>
           </Flex>
         </body>
