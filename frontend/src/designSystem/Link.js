@@ -90,6 +90,7 @@ const hover = pseudoStyle({
 const Link = styled.a`
   overflow: ${(props) => props.overflow};
   text-overflow: ${(props) => props.textOverflow};
+  text-decoration: ${(props) => props.textDecoration};
   cursor: pointer;
   transition: ${(props) => props.transition};
   opacity: ${(props) => props.opacity};

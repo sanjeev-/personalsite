@@ -31,8 +31,14 @@ const Header = () => {
       </Flex>
       <Flex px={4}>
         {links.map((object, i) => (
-          <Flex px={2} color={colors.purple[1]}>
-            <Link href={object.link}>{object.name}</Link>
+          <Flex px={4}>
+            <Link
+              href={object.link}
+              color={colors.purple[1]}
+              textDecoration="none"
+            >
+              {object.name}
+            </Link>
           </Flex>
         ))}
       </Flex>
