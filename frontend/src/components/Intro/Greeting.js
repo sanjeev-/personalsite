@@ -8,7 +8,6 @@ const Greeting = () => {
     <Flex flexDirection="column" alignItems="left" textAlign="left">
       <Title>Hi, this is </Title>
       <ImpactTitle>Sanjeev Sreetharan's</ImpactTitle>
-      <Title> personal website</Title>
     </Flex>
   );
 };
