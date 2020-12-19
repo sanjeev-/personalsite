@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 import ProjectsRouter from "./components/projects/ProjectsRouter";
+import About from "./components/about/About";
+import Snippets from "./components/snippets/Snippets";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -50,6 +52,8 @@ const routing = (
       <div>
         <Route exact path="/" component={App} />
         <Route path="/projects" component={ProjectsRouter} />
+        <Route path="/about" component={About} />
+        <Route path="/snippets" component={Snippets} />
       </div>
     </Router>
   </ApolloProvider>
