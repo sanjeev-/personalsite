@@ -2,6 +2,8 @@ import React from "react";
 import { Flex, Title, SubHead, Text } from "../../designSystem";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
+import ProjectCard from "./ProjectCard";
+import projectContent from "./content";
 
 const ProjectsDashboard = () => {
   return (
@@ -12,6 +14,25 @@ const ProjectsDashboard = () => {
       backgroundColor={colors.grey[0]}
     >
       <Header />
+      <Flex
+        backgroundColor={colors.grey[0]}
+        mx={5}
+        my={4}
+        justifyContent="center"
+        minWidth={["400px", "500px"]}
+        minHeight="800px"
+        flexDirection="row"
+      >
+        {projectContent.map((object, i) => (
+          <ProjectCard
+            key={i}
+            title={object.title}
+            subtitle={object.subtitle}
+            coverPhotoUrl={object.coverPhotoUrl}
+            onClickRoute={object.onClickRoute}
+          />
+        ))}
+      </Flex>
     </Flex>
   );
 };

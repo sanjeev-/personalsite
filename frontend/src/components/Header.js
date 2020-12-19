@@ -37,7 +37,7 @@ const Header = () => {
       </Flex>
       <Flex px={4}>
         {links.map((object, i) => (
-          <Flex px={4}>
+          <Flex px={4} key={i}>
             <Link
               href={object.link}
               color={colors.grey[2]}

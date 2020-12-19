@@ -1,5 +1,6 @@
 // Projects
 export const ROUTE_PROJECTS_BASE = "/projects";
+export const ROUTE_ZORA_PROJECT = `${ROUTE_PROJECTS_BASE}/zora`;
 
 // About
 export const ROUTE_ABOUT_BASE = "/about";
