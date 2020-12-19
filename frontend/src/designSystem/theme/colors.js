@@ -1,7 +1,8 @@
 const colors = {
-  purple: ["#F6F6FF", "#ABABFF"],
-  green: ["#99D69C"],
-  grey: ["#A5ACB8", "#505669", "#171717"],
+  purple: ["#9388F1"],
+  green: ["#57B182"],
+  grey: ["#161616", "#292929", "#9696A4", "#CBD1D8"],
+  beige: ["#F7CC9F"],
 };
 
 export default colors;
