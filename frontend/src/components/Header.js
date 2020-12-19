@@ -26,19 +26,21 @@ const Header = () => {
   return (
     <Flex
       width="100%"
-      backgroundColor={colors.grey[2]}
+      backgroundColor={colors.grey[0]}
       justifyContent="space-between"
       alignItems="center"
     >
-      <Flex px={4}>
-        <Text color={colors.purple[1]}>SSS</Text>
+      <Flex px={5}>
+        <Text color={colors.purple[0]} fontWeight="bold">
+          SSS
+        </Text>
       </Flex>
       <Flex px={4}>
         {links.map((object, i) => (
           <Flex px={4}>
             <Link
               href={object.link}
-              color={colors.purple[1]}
+              color={colors.grey[2]}
               textDecoration="none"
             >
               {object.name}

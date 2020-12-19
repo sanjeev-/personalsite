@@ -9,15 +9,15 @@ const Snippets = () => {
       minWidth="100vw"
       minHeight="100vh"
       flexDirection="column"
-      backgroundColor={colors.grey[2]}
+      backgroundColor={colors.grey[0]}
     >
       <Header />
       <Flex flexDirection="row" justifyContent="space-around">
         <Flex flexDirection="column">
-          <Text color={colors.grey[0]}>Snip</Text>
+          <Text color={colors.grey[3]}>Snip</Text>
         </Flex>
         <Flex flexDirection="column">
-          <Text color={colors.grey[0]}>Snap</Text>
+          <Text color={colors.grey[3]}>Blap</Text>
         </Flex>
       </Flex>
     </Flex>

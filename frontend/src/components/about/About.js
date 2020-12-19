@@ -9,15 +9,15 @@ const About = () => {
       minWidth="100vw"
       minHeight="100vh"
       flexDirection="column"
-      backgroundColor={colors.grey[2]}
+      backgroundColor={colors.grey[0]}
     >
       <Header />
       <Flex flexDirection="row" justifyContent="space-around">
         <Flex flexDirection="column">
-          <Text color={colors.grey[0]}>Pic of me</Text>
+          <Text color={colors.grey[3]}>Pic of me</Text>
         </Flex>
         <Flex flexDirection="column">
-          <Text color={colors.grey[0]}>Hi im sanjeev</Text>
+          <Text color={colors.grey[3]}>Hi im sanjeev</Text>
         </Flex>
       </Flex>
     </Flex>

@@ -9,7 +9,7 @@ const ProjectsDashboard = () => {
       minWidth="100vw"
       minHeight="100vh"
       flexDirection="column"
-      backgroundColor={colors.grey[2]}
+      backgroundColor={colors.grey[0]}
     >
       <Header />
     </Flex>
