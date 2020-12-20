@@ -31,7 +31,12 @@ const Header = () => {
       alignItems="center"
     >
       <Flex px={5} py={3}>
-        <Link color={colors.purple[0]} fontWeight="bold" href="/">
+        <Link
+          color={colors.purple[0]}
+          fontWeight="bold"
+          href="/"
+          textDecoration="none"
+        >
           SSS
         </Link>
       </Flex>
