@@ -8,14 +8,14 @@ const AINGRY_BIRDS_PHOTO_URL =
 
 export const projectContent = [
   {
-    title: "Untitled Zora Project",
-    subtitle: "Short photos and videos of my dog Zora",
+    title: "ZoraTV",
+    subtitle: "Short videos of my dog Zora",
     coverPhotoUrl: ZORA_PROJECT_PHOTO_URL,
     onClickRoute: ROUTE_ZORA_PROJECT,
   },
   {
-    title: "AIngry birds",
-    subtitle: "Teach a robot how to play angry birds",
+    title: "AI.ngry birds",
+    subtitle: "A robot learns to play angry birds",
     coverPhotoUrl: AINGRY_BIRDS_PHOTO_URL,
     onClickRoute: "",
   },

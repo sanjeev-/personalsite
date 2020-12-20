@@ -30,10 +30,10 @@ const Header = () => {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Flex px={5}>
-        <Text color={colors.purple[0]} fontWeight="bold">
+      <Flex px={5} py={3}>
+        <Link color={colors.purple[0]} fontWeight="bold" href="/">
           SSS
-        </Text>
+        </Link>
       </Flex>
       <Flex px={4}>
         {links.map((object, i) => (

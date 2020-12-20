@@ -7,27 +7,42 @@ const ProjectCard = ({ title, subtitle, coverPhotoUrl, onClickRoute }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      onMouseEnter={console.log("entered")}
-      onMouseLeave={console.log("leave")}
-      onClick={onClickRoute}
+      height="400px"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={() => (window.location.href = onClickRoute)}
     >
       <Flex
         width="400px"
         height="400px"
         flexDirection="column"
-        justifyContent="flex-end"
+        justifyContent="center"
+        alignItems="center"
         borderRadius="10px"
         m={4}
         backgroundColor={colors.grey[1]}
         backgroundImage={`url(${coverPhotoUrl})`}
-        filter={`grayscale(100%)`}
+        filter={isHovered ? `grayscale(50%)` : `grayscale(100%)`}
+        transition={"filter 0.25s ease-in-out"}
       >
-        <Flex px={3}>
-          <Text>{title}</Text>
-        </Flex>
-        <Flex px={3}>
-          <Text>{subtitle}</Text>
-        </Flex>
+        {isHovered && (
+          <Flex
+            backgroundColor={colors.grey[1]}
+            alignItems="center"
+            width="100%"
+          >
+            <Flex px={3}>
+              <Text fontSize={3} fontWeight={700} color={colors.beige[0]}>
+                {title}
+              </Text>
+            </Flex>
+            <Flex px={3}>
+              <Text color={colors.grey[2]} fontSize={1}>
+                {subtitle}
+              </Text>
+            </Flex>
+          </Flex>
+        )}
       </Flex>
     </div>
   );
