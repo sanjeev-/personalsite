@@ -11,7 +11,7 @@ class MainApp extends React.Component {
       <div className="MainApp">
         <body>
           <Flex backgroundColor={colors.grey[0]} minHeight="100vh" width="100%">
-            <Flex flexDirection="column" width="100%">
+            <Flex flexDirection="column" width="100%" px={5} py={4}>
               <Header />
               <Flex></Flex>
             </Flex>

@@ -1,0 +1,53 @@
+@keyframes first-anim {
+  25% {
+    transform: scaleY(0.9) rotate(10deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(-10deg);
+  }
+  75% {
+    transform: scale(0.95) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes color-anim {
+  50% {
+    color: #2c73d2;
+  }
+  80% {
+    color: #0089ba;
+  }
+  100% {
+    color: #00c9a7;
+  }
+}
+
+.first-s:hover {
+  animation: first-anim 0.4s ease-out;
+}
+
+.second-s:hover {
+  animation: first-anim 0.4s ease-out;
+}
+
+.third-s:hover {
+  animation: first-anim 0.4s ease-out;
+}
+
+.first-s-color:hover {
+  color: #00c9a7;
+  transition: color 1s east-out;
+}
+
+.second-s-color:hover {
+  color: #00c9a7;
+  transition: color 1s east-out;
+}
+
+.third-s-color:hover {
+  color: #00c9a7;
+  transition: color 1s east-out;
+}

@@ -13,7 +13,9 @@ const ProjectsDashboard = () => {
       flexDirection="column"
       backgroundColor={colors.grey[0]}
     >
-      <Header />
+      <Flex px={5} py={4}>
+        <Header />
+      </Flex>
       <Flex
         backgroundColor={colors.grey[0]}
         mx={5}
