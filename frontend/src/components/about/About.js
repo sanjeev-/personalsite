@@ -11,7 +11,10 @@ const About = () => {
       flexDirection="column"
       backgroundColor={colors.grey[0]}
     >
-      <Header />
+      <Flex px={5} py={4}>
+        <Header />
+      </Flex>
+
       <Flex flexDirection="row" justifyContent="space-around">
         <Flex flexDirection="column">
           <Text color={colors.grey[3]}>Pic of me</Text>
