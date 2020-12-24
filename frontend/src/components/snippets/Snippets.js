@@ -1,27 +1,46 @@
 import React from "react";
-import { Flex, Title, SubHead, Text } from "../../designSystem";
+import { Flex, Title, SubHead, Text, Link } from "../../designSystem";
 import { colors } from "../../designSystem/theme";
-import Header from "../Header.js";
+import SnippetRow from "./SnippetRow.js";
 
 const Snippets = () => {
+  const snippetsData = [
+    {
+      snippetName: "Univariate feature extractor",
+      category: "ML",
+      language: "Python",
+      description: "This is a useful class that helps with feature extraction!",
+    },
+  ];
   return (
     <Flex
-      minWidth="100vw"
-      minHeight="100vh"
+      minWidth="1000px"
+      minHeight="800px"
+      borderRadius="8px"
       flexDirection="column"
-      backgroundColor={colors.grey[0]}
+      backgroundColor={colors.grey[1]}
     >
-      <Flex px={5} py={4}>
-        <Header />
+      <Flex justifyContent="space-around" pt={2}>
+        <Link color={colors.beige[0]} fontSize={2}>
+          Snippet
+        </Link>
+        <Link color={colors.beige[0]} fontSize={2}>
+          Category
+        </Link>
+        <Link color={colors.beige[0]} fontSize={2}>
+          Language
+        </Link>
+        <Link color={colors.beige[0]} fontSize={2}>
+          Description
+        </Link>
       </Flex>
-      <Flex flexDirection="row" justifyContent="space-around">
-        <Flex flexDirection="column">
-          <Text color={colors.grey[3]}>Snip</Text>
-        </Flex>
-        <Flex flexDirection="column">
-          <Text color={colors.grey[3]}>Blap</Text>
-        </Flex>
-      </Flex>
+      <SnippetRow
+        snippetName={snippetsData[0].snippetName}
+        category={snippetsData[0].category}
+        language={snippetsData[0].language}
+        description={snippetsData[0].description}
+        link={"/snippets/univariate-feature-extractor"}
+      />
     </Flex>
   );
 };
