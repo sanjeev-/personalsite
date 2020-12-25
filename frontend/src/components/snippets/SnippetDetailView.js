@@ -1,4 +1,11 @@
 import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import {
+  nightOwl,
+  shadesOfPurple,
+  obsidian,
+} from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 import { Flex, Title, SubHead, Text } from "../../designSystem";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
@@ -9,6 +16,7 @@ const SnippetDetailView = () => {
     code: "",
     extendedDescription: "",
   };
+  const codeString = "(num) => num + 1 \n return blah";
   return (
     <Flex
       minWidth="100vw"
@@ -31,7 +39,16 @@ const SnippetDetailView = () => {
             borderRadius="10px"
             backgroundColor={colors.grey[1]}
           >
-            <Text color={colors.grey[2]}>blah blah blah code</Text>
+            <Text color={colors.grey[2]}>
+              <SyntaxHighlighter
+                language="javascript"
+                style={shadesOfPurple}
+                customStyle={{ lineHeight: "1.75em", fontSize: "18px" }}
+                showLineNumbers
+              >
+                {codeString}
+              </SyntaxHighlighter>
+            </Text>
           </Flex>
         </Flex>
       </Flex>
