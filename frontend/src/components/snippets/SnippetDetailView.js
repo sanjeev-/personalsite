@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {
-  nightOwl,
-  shadesOfPurple,
-  obsidian,
-} from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import { Flex, Title, SubHead, Text } from "../../designSystem";
+import { Flex, Text, Link } from "../../designSystem";
+import { getFileFromGithub } from "../../utils/api";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
 
 const SnippetDetailView = () => {
+  const [snippet, setSnippet] = useState("");
+  useEffect(() => {
+    const myCodeStr = getFileFromGithub(
+      "univariate_feature_extractor.py"
+    ).then((res) => setSnippet(res));
+  }, []);
   const snippetDetailData = {
     snippetName: "",
-    code: "",
-    extendedDescription: "",
+    githubFilePath: "univariate_feature_extractor.py",
+    extendedDescription:
+      "This is a univariate feature extractor, \n it's very useful in terms of extracting features",
   };
-  const codeString = "(num) => num + 1 \n return blah";
+
   return (
     <Flex
       minWidth="100vw"
@@ -27,28 +31,52 @@ const SnippetDetailView = () => {
       <Flex px={5} py={4}>
         <Header />
       </Flex>
-      <Flex
-        alignItems="center"
-        flexDirection="row"
-        justifyContent="space-around"
-      >
-        <Flex flexDirection="column">blah blah blah description</Flex>
-        <Flex flexDirection="column">
-          <Flex
-            minHeight="400px"
-            borderRadius="10px"
-            backgroundColor={colors.grey[1]}
-          >
-            <Text color={colors.grey[2]}>
-              <SyntaxHighlighter
-                language="javascript"
-                style={shadesOfPurple}
-                customStyle={{ lineHeight: "1.75em", fontSize: "18px" }}
-                showLineNumbers
+      <Flex minWidth="100vw" justifyContent="center" pb={5}>
+        <Flex justifyContent="center" maxWidth="1000px" flexDirection="column">
+          <Flex width="100%">
+            <Flex pr={2} alignItems="center">
+              <Link color={colors.grey[2]} href={"/snippets/"}>
+                {" "}
+                Snippets
+              </Link>
+            </Flex>
+            <Flex pr={2} alignItems="center">
+              <Link color={colors.grey[2]}>/</Link>
+            </Flex>
+            <Flex alignItems="center">
+              <Link color={colors.beige[0]}>
+                {" "}
+                Univariate feature extractor{" "}
+              </Link>
+            </Flex>
+          </Flex>
+          <Flex>
+            <Flex
+              flexDirection="column"
+              alignItems="left"
+              minWidth="500px"
+              pt={5}
+            >
+              <Text color={colors.grey[3]} fontSize={2} lineHeight="1.5em">
+                {snippetDetailData.extendedDescription}
+              </Text>
+            </Flex>
+            <Flex flexDirection="column" px={2}>
+              <Flex
+                minHeight="400px"
+                borderRadius="10px"
+                backgroundColor={colors.grey[1]}
               >
-                {codeString}
-              </SyntaxHighlighter>
-            </Text>
+                <SyntaxHighlighter
+                  language="python"
+                  style={a11yDark}
+                  customStyle={{ lineHeight: "1.5em", fontSize: "12px" }}
+                  showLineNumbers
+                >
+                  {snippet}
+                </SyntaxHighlighter>
+              </Flex>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
