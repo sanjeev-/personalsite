@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import {
   nightOwl,
@@ -6,17 +6,24 @@ import {
   obsidian,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import { Flex, Title, SubHead, Text } from "../../designSystem";
+import { Flex, Text } from "../../designSystem";
+import { getFileFromGithub } from "../../utils/api";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
 
 const SnippetDetailView = () => {
+  const [snippet, setSnippet] = useState("");
+  useEffect(() => {
+    const myCodeStr = getFileFromGithub(
+      "univariate_feature_extractor.py"
+    ).then((res) => setSnippet(res));
+  }, []);
   const snippetDetailData = {
     snippetName: "",
     code: "",
     extendedDescription: "",
   };
-  const codeString = "(num) => num + 1 \n return blah";
+
   return (
     <Flex
       minWidth="100vw"
@@ -41,12 +48,12 @@ const SnippetDetailView = () => {
           >
             <Text color={colors.grey[2]}>
               <SyntaxHighlighter
-                language="javascript"
-                style={shadesOfPurple}
-                customStyle={{ lineHeight: "1.75em", fontSize: "18px" }}
+                language="python"
+                style={nightOwl}
+                customStyle={{ lineHeight: "1.5em", fontSize: "12px" }}
                 showLineNumbers
               >
-                {codeString}
+                {snippet}
               </SyntaxHighlighter>
             </Text>
           </Flex>
