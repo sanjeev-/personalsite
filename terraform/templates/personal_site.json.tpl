@@ -38,6 +38,10 @@
     {
     "name": "ALLOWED_HOSTS",
     "value": "${allowed_hosts}"
+    },
+    {
+    "name": "DJANGO_SECRET_KEY",
+    "value": "${django_secret_key}"
     }
   ],
     "mountPoints": [
