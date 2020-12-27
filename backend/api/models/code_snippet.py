@@ -1,6 +1,6 @@
 from django.db import models
 from enum import Enum, unique
-from api.utils import get_choices
+from api.utils.django_utils import get_choices
 
 
 @unique
