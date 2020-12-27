@@ -110,3 +110,8 @@ variable "allowed_hosts" {
   description = "Domain name for allowed hosts"
   default     = ".hellosanjeev.com"
 }
+
+variable "django_secret_key" {
+  description = "Django secret key"
+  default     = "abc123"
+}
