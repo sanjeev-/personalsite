@@ -35,6 +35,7 @@ const Snippets = ({ snippets }) => {
             category={snip.category}
             language={snip.language}
             preview={snip.preview}
+            link={`snippets/${snip.id}`}
           />
         ))}
       </Flex>
