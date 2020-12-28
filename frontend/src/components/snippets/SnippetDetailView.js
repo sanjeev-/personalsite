@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useQuery } from "@apollo/react-hooks";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
@@ -7,7 +8,9 @@ import { getFileFromGithub } from "../../utils/api";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
 
-const SnippetDetailView = () => {
+const SnippetDetailView = ({ match }) => {
+  const { params } = match;
+  const { id } = params;
   const [snippet, setSnippet] = useState("");
   useEffect(() => {
     const myCodeStr = getFileFromGithub(

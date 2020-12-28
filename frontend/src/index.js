@@ -16,7 +16,6 @@ import "./fonts/WorkSans-Thin.ttf";
 import "./fonts/WorkSans-Black.ttf";
 import "./fonts/WorkSans-Bold.ttf";
 import "./fonts/WorkSans-Light.ttf";
-import gql from "graphql-tag";
 
 import { ApolloClient } from "apollo-client";
 import { ApolloProvider } from "@apollo/react-hooks";

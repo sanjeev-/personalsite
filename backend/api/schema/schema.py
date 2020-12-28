@@ -19,10 +19,19 @@ class CodeSnippetType(DjangoObjectType):
         model = CodeSnippet
 
 
+def resolve_code_snippet_by_id(self, info, id):
+    return CodeSnippet.objects.get(id=id)
+
+
 class Query(graphene.ObjectType):
     users = graphene.List(UserType)
     retrieve_zora_snippets = graphene.List(ZoraSnippetType)
     retrieve_code_snippets = graphene.List(CodeSnippetType)
+    code_snippet_by_id = graphene.Field(
+        CodeSnippetType,
+        id=graphene.ID(required=True),
+        resolver=resolve_code_snippet_by_id,
+    )
 
     def resolve_users(self, info):
         return User.objects.all()

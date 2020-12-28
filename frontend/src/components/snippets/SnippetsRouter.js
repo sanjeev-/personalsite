@@ -9,11 +9,7 @@ const SnippetsRouter = () => {
     <Flex>
       <Switch>
         <Route exact path="/snippets" component={SnippetsConnector} />
-        <Route
-          exact
-          path="/snippets/univariate-feature-extractor"
-          component={SnippetDetailView}
-        />
+        <Route exact path="/snippets/:id" component={SnippetDetailView} />
       </Switch>
     </Flex>
   );
