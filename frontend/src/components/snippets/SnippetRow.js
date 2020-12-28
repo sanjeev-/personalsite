@@ -1,11 +1,12 @@
 import React from "react";
 import { Flex, Title, SubHead, Text, Link } from "../../designSystem";
+import Pill from "../Pill.js";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
 
-const SnippetRow = ({ snippetName, category, language, description, link }) => {
+const SnippetRow = ({ snippetName, category, language, preview, link }) => {
   return (
-    <Flex justifyContent="space-between" pt={2} px={3}>
+    <>
       <Link
         color={colors.grey[3]}
         fontSize={2}
@@ -20,7 +21,11 @@ const SnippetRow = ({ snippetName, category, language, description, link }) => {
         href={link}
         textDecoration="none"
       >
-        {category}
+        <Pill
+          text={category}
+          backgroundColor={colors.green[0]}
+          fontColor={colors.grey[0]}
+        />
       </Link>
       <Link
         color={colors.grey[3]}
@@ -36,9 +41,9 @@ const SnippetRow = ({ snippetName, category, language, description, link }) => {
         href={link}
         textDecoration="none"
       >
-        {description}
+        {preview}
       </Link>
-    </Flex>
+    </>
   );
 };
 

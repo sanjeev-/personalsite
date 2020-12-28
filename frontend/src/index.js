@@ -28,23 +28,7 @@ const link = new HttpLink({
   uri: "https://api.hellosanjeev.com/graphql",
 });
 
-const GET_ZORA_SNIPPETS = gql`
-  query {
-    retrieveZoraSnippets {
-      date
-      title
-      path
-    }
-  }
-`;
-
 const client = new ApolloClient({ cache, link });
-
-client
-  .query({
-    query: GET_ZORA_SNIPPETS,
-  })
-  .then((result) => console.log(result));
 
 const routing = (
   <ApolloProvider client={client}>
