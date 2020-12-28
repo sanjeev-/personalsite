@@ -7,22 +7,36 @@ import { Flex, Text, Link } from "../../designSystem";
 import { getFileFromGithub } from "../../utils/api";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
+import gql from "graphql-tag";
 
 const SnippetDetailView = ({ match }) => {
   const { params } = match;
   const { id } = params;
   const [snippet, setSnippet] = useState("");
-  useEffect(() => {
-    const myCodeStr = getFileFromGithub(
-      "univariate_feature_extractor.py"
-    ).then((res) => setSnippet(res));
-  }, []);
-  const snippetDetailData = {
-    snippetName: "",
-    githubFilePath: "univariate_feature_extractor.py",
-    extendedDescription:
-      "This is a univariate feature extractor, \n it's very useful in terms of extracting features",
-  };
+  const CODE_SNIPPET_BY_ID = gql`
+    query {
+      codeSnippetById(id: "${id}") {
+        id
+        githubFileName
+        description
+        snippetName
+      }
+    }
+  `;
+  const { loading, error, data: snippetData } = useQuery(CODE_SNIPPET_BY_ID);
+
+  if (error) {
+    return <p>Error!</p>;
+  }
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  const { description, snippetName } = snippetData.codeSnippetById;
+
+  const githubFileName = snippetData?.codeSnippetById.githubFileName;
+  getFileFromGithub(githubFileName).then((res) => setSnippet(res));
 
   return (
     <Flex
@@ -38,7 +52,7 @@ const SnippetDetailView = ({ match }) => {
         <Flex justifyContent="center" maxWidth="1000px" flexDirection="column">
           <Flex width="100%">
             <Flex pr={2} alignItems="center">
-              <Link color={colors.grey[2]} href={"/snippets/"}>
+              <Link color={colors.grey[2]} href={"/snippets"}>
                 {" "}
                 Snippets
               </Link>
@@ -47,10 +61,7 @@ const SnippetDetailView = ({ match }) => {
               <Link color={colors.grey[2]}>/</Link>
             </Flex>
             <Flex alignItems="center">
-              <Link color={colors.beige[0]}>
-                {" "}
-                Univariate feature extractor{" "}
-              </Link>
+              <Link color={colors.beige[0]}> {snippetName}</Link>
             </Flex>
           </Flex>
           <Flex>
@@ -61,7 +72,7 @@ const SnippetDetailView = ({ match }) => {
               pt={5}
             >
               <Text color={colors.grey[3]} fontSize={2} lineHeight="1.5em">
-                {snippetDetailData.extendedDescription}
+                {description}
               </Text>
             </Flex>
             <Flex flexDirection="column" px={2}>

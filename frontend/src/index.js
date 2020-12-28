@@ -22,9 +22,16 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
+console.log(process.env.NODE_ENV);
+const API_URL =
+  process.env.NODE_ENV === `development`
+    ? "http://localhost:8000/graphql"
+    : "https://api.hellosanjeev.com/graphql";
+
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: "https://api.hellosanjeev.com/graphql",
+  // uri: "https://api.hellosanjeev.com/graphql",
+  uri: API_URL,
 });
 
 const client = new ApolloClient({ cache, link });

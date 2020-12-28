@@ -14,7 +14,6 @@ export const getFileFromGithub = (filename) => {
   })
     .then((res) => res.text())
     .then((data) => {
-      console.log(data);
       return data;
     });
 
