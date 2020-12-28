@@ -1,17 +1,10 @@
+import { SingleFieldSubscriptionsRule } from "graphql";
 import React from "react";
 import { Flex, Title, SubHead, Text, Link } from "../../designSystem";
 import { colors } from "../../designSystem/theme";
 import SnippetRow from "./SnippetRow.js";
 
-const Snippets = () => {
-  const snippetsData = [
-    {
-      snippetName: "Univariate feature extractor",
-      category: "ML",
-      language: "Python",
-      description: "This is a useful class that helps with feature extraction!",
-    },
-  ];
+const Snippets = ({ snippets }) => {
   return (
     <Flex
       minWidth="1000px"
@@ -34,13 +27,17 @@ const Snippets = () => {
           Description
         </Link>
       </Flex>
-      <SnippetRow
-        snippetName={snippetsData[0].snippetName}
-        category={snippetsData[0].category}
-        language={snippetsData[0].language}
-        description={snippetsData[0].description}
-        link={"/snippets/univariate-feature-extractor"}
-      />
+      <Flex justifyContent="space-around" pt={2} width="100%">
+        {snippets.map((snip, idx) => (
+          <SnippetRow
+            key={idx}
+            snippetName={snip.snippetName}
+            category={snip.category}
+            language={snip.language}
+            preview={snip.preview}
+          />
+        ))}
+      </Flex>
     </Flex>
   );
 };
