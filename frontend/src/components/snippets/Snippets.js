@@ -3,6 +3,7 @@ import React from "react";
 import { Flex, Title, SubHead, Text, Link } from "../../designSystem";
 import { colors } from "../../designSystem/theme";
 import SnippetRow from "./SnippetRow.js";
+import Searchbar from "./Searchbar.js";
 
 const Snippets = ({ snippets }) => {
   return (
@@ -11,23 +12,13 @@ const Snippets = ({ snippets }) => {
       minHeight="800px"
       borderRadius="8px"
       flexDirection="column"
-      backgroundColor={colors.grey[1]}
+      alignItems="center"
+      backgroundColor={colors.grey[0]}
     >
-      <Flex justifyContent="space-around" pt={2}>
-        <Link color={colors.beige[0]} fontSize={2}>
-          Snippet
-        </Link>
-        <Link color={colors.beige[0]} fontSize={2}>
-          Category
-        </Link>
-        <Link color={colors.beige[0]} fontSize={2}>
-          Language
-        </Link>
-        <Link color={colors.beige[0]} fontSize={2}>
-          Description
-        </Link>
+      <Flex pb={2}>
+        <Searchbar />
       </Flex>
-      <Flex justifyContent="space-around" pt={2} width="100%">
+      <Flex pt={2} width="100%">
         {snippets.map((snip, idx) => (
           <SnippetRow
             key={idx}
