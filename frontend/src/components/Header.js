@@ -9,7 +9,7 @@ import {
 import { Logo } from "./Logo";
 import { HeaderLinks } from "./HeaderLinks";
 
-const Header = () => {
+const Header = ({ projectsActive, snippetsActive, aboutActive }) => {
   return (
     <Flex
       width="100%"
@@ -19,7 +19,11 @@ const Header = () => {
     >
       <Logo />
       <Flex pl={5}>
-        <HeaderLinks />
+        <HeaderLinks
+          projectsActive={projectsActive}
+          snippetsActive={snippetsActive}
+          aboutActive={aboutActive}
+        />
       </Flex>
     </Flex>
   );

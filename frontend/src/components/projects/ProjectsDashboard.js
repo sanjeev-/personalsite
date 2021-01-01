@@ -14,7 +14,7 @@ const ProjectsDashboard = () => {
       backgroundColor={colors.grey[0]}
     >
       <Flex px={5} py={4}>
-        <Header />
+        <Header projectsActive />
       </Flex>
       <Flex
         backgroundColor={colors.grey[0]}

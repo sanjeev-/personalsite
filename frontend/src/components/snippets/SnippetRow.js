@@ -3,6 +3,17 @@ import { Flex, Text } from "../../designSystem";
 import Pill from "../Pill.js";
 import { colors } from "../../designSystem/theme";
 
+const handlePill = (text) => {
+  const pillObject = {
+    DATA_SCIENCE: {
+      backgroundColor: colors.green[0],
+      formattedText: "Data science",
+      fontColor: colors.grey[0],
+    },
+  };
+  return pillObject[text];
+};
+
 const SnippetRow = ({ snippetName, category, language, preview, link }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -27,11 +38,7 @@ const SnippetRow = ({ snippetName, category, language, preview, link }) => {
           {snippetName}
         </Text>
         <Text color={colors.grey[3]} fontSize={2} textDecoration="none">
-          <Pill
-            text={category}
-            backgroundColor={colors.green[0]}
-            fontColor={colors.grey[0]}
-          />
+          <Pill text={category} handle={handlePill} />
         </Text>
         <Text color={colors.grey[2]} fontSize={2} textDecoration="none">
           {language}

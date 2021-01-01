@@ -8,14 +8,14 @@ import {
   ROUTE_SNIPPETS_BASE,
 } from "../../constants/route_constants";
 
-const HeaderLinks = () => {
+const HeaderLinks = ({ projectsActive, snippetsActive, aboutActive }) => {
   return (
     <Flex>
       <Flex px={4}>
         <Link
           className="header-links"
           href={ROUTE_PROJECTS_BASE}
-          color={colors.grey[2]}
+          color={projectsActive ? colors.grey[3] : colors.grey[2]}
           textDecoration="none"
         >
           Projects
@@ -25,7 +25,7 @@ const HeaderLinks = () => {
         <Link
           className="header-links"
           href={ROUTE_SNIPPETS_BASE}
-          color={colors.grey[2]}
+          color={snippetsActive ? colors.grey[3] : colors.grey[2]}
           textDecoration="none"
         >
           Snippets
@@ -35,7 +35,7 @@ const HeaderLinks = () => {
         <Link
           className="header-links"
           href={ROUTE_ABOUT_BASE}
-          color={colors.grey[2]}
+          color={aboutActive ? colors.grey[3] : colors.grey[2]}
           textDecoration="none"
         >
           About

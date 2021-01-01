@@ -15,7 +15,7 @@ const Snippets = ({ snippets }) => {
       alignItems="center"
       backgroundColor={colors.grey[0]}
     >
-      <Flex pb={2}>
+      <Flex pb={4}>
         <Searchbar />
       </Flex>
       <Flex pt={2} width="100%">

@@ -12,7 +12,7 @@ const About = () => {
       backgroundColor={colors.grey[0]}
     >
       <Flex px={5} py={4}>
-        <Header />
+        <Header aboutActive />
       </Flex>
 
       <Flex flexDirection="row" justifyContent="space-around">
