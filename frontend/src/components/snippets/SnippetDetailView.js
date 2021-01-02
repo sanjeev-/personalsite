@@ -46,7 +46,7 @@ const SnippetDetailView = ({ match }) => {
       backgroundColor={colors.grey[0]}
     >
       <Flex px={5} py={4}>
-        <Header />
+        <Header snippetsActive />
       </Flex>
       <Flex minWidth="100vw" justifyContent="center" pb={5}>
         <Flex justifyContent="center" maxWidth="1000px" flexDirection="column">
@@ -70,6 +70,7 @@ const SnippetDetailView = ({ match }) => {
               alignItems="left"
               minWidth="500px"
               pt={5}
+              pr={3}
             >
               <Text color={colors.grey[3]} fontSize={2} lineHeight="1.5em">
                 {description}

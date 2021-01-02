@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Title, SubHead, Text } from "../../designSystem";
+import { Flex, Text } from "../../designSystem";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
 
@@ -19,8 +19,10 @@ const About = () => {
         <Flex flexDirection="column">
           <Text color={colors.grey[3]}>Pic of me</Text>
         </Flex>
-        <Flex flexDirection="column">
-          <Text color={colors.grey[3]}>Hi im sanjeev</Text>
+        <Flex flexDirection="column" maxWidth="500px">
+          <Text color={colors.grey[2]} lineHeight="1.2em" fontSize="1em">
+            Hi,
+          </Text>
         </Flex>
       </Flex>
     </Flex>

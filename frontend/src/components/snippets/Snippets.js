@@ -1,4 +1,3 @@
-import { SingleFieldSubscriptionsRule } from "graphql";
 import React from "react";
 import { Flex, Title, SubHead, Text, Link } from "../../designSystem";
 import { colors } from "../../designSystem/theme";

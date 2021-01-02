@@ -22,7 +22,6 @@ const ProjectsDashboard = () => {
         my={4}
         justifyContent="center"
         minWidth={["400px", "500px"]}
-        minHeight="800px"
         flexDirection="row"
       >
         {projectContent.map((object, i) => (

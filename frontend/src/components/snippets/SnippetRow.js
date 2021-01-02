@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Flex, Text } from "../../designSystem";
 import Pill from "../Pill.js";
 import { colors } from "../../designSystem/theme";
+import { toTitleCase } from "./utils";
 
 const handlePill = (text) => {
   const pillObject = {
@@ -41,7 +42,7 @@ const SnippetRow = ({ snippetName, category, language, preview, link }) => {
           <Pill text={category} handle={handlePill} />
         </Text>
         <Text color={colors.grey[2]} fontSize={2} textDecoration="none">
-          {language}
+          {toTitleCase(language)}
         </Text>
         <Text color={colors.grey[2]} fontSize={2} textDecoration="none">
           {preview}
