@@ -1,11 +1,6 @@
 import React from "react";
 import { colors } from "../designSystem/theme";
 import { Flex, Text, Link } from "../designSystem";
-import {
-  ROUTE_PROJECTS_BASE,
-  ROUTE_ABOUT_BASE,
-  ROUTE_SNIPPETS_BASE,
-} from "../constants/route_constants";
 import { Logo } from "./Logo";
 import { HeaderLinks } from "./HeaderLinks";
 

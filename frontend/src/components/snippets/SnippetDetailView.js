@@ -8,6 +8,8 @@ import { getFileFromGithub } from "../../utils/api";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
 import gql from "graphql-tag";
+import GithubLink from "./GithubLink";
+import "./index.css";
 
 const SnippetDetailView = ({ match }) => {
   const { params } = match;
@@ -52,7 +54,11 @@ const SnippetDetailView = ({ match }) => {
         <Flex justifyContent="center" maxWidth="1000px" flexDirection="column">
           <Flex width="100%">
             <Flex pr={2} alignItems="center">
-              <Link color={colors.grey[2]} href={"/snippets"}>
+              <Link
+                color={colors.grey[2]}
+                href={"/snippets"}
+                className="link-hover"
+              >
                 {" "}
                 Snippets
               </Link>
@@ -61,7 +67,7 @@ const SnippetDetailView = ({ match }) => {
               <Link color={colors.grey[2]}>/</Link>
             </Flex>
             <Flex alignItems="center">
-              <Link color={colors.beige[0]}> {snippetName}</Link>
+              <Text color={colors.beige[0]}> {snippetName}</Text>
             </Flex>
           </Flex>
           <Flex>
@@ -75,6 +81,9 @@ const SnippetDetailView = ({ match }) => {
               <Text color={colors.grey[3]} fontSize={2} lineHeight="1.5em">
                 {description}
               </Text>
+              <Flex pt={4}>
+                <GithubLink githubFileName={githubFileName} />
+              </Flex>
             </Flex>
             <Flex flexDirection="column" px={2}>
               <Flex

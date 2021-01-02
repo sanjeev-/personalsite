@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Title, SubHead, Text } from "../../designSystem";
+import { Flex } from "../../designSystem";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
 import ProjectCard from "./ProjectCard";

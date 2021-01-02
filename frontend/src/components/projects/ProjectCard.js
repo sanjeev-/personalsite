@@ -10,7 +10,6 @@ const ProjectCard = ({ title, subtitle, coverPhotoUrl, onClickRoute }) => {
         height="400px"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onClick={() => (window.location.href = onClickRoute)}
       >
         <Flex
           width="400px"
@@ -19,7 +18,9 @@ const ProjectCard = ({ title, subtitle, coverPhotoUrl, onClickRoute }) => {
           justifyContent="flex-end"
           alignItems="center"
           borderRadius="10px"
+          style={{ cursor: "pointer" }}
           mx={4}
+          onClick={() => (window.location.href = onClickRoute)}
           backgroundColor={colors.grey[1]}
           backgroundImage={`url(${coverPhotoUrl})`}
           filter={isHovered ? `grayscale(50%)` : `grayscale(100%)`}
