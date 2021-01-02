@@ -35,7 +35,7 @@ const SnippetsConnector = () => {
         backgroundColor={colors.grey[0]}
       >
         <Flex px={5} py={4}>
-          <Header />
+          <Header snippetsActive />
         </Flex>
         <Flex alignItems="center" flexDirection="column">
           <Snippets snippets={snippets} />

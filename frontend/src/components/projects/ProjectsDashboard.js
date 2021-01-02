@@ -14,7 +14,7 @@ const ProjectsDashboard = () => {
       backgroundColor={colors.grey[0]}
     >
       <Flex px={5} py={4}>
-        <Header />
+        <Header projectsActive />
       </Flex>
       <Flex
         backgroundColor={colors.grey[0]}
@@ -22,7 +22,6 @@ const ProjectsDashboard = () => {
         my={4}
         justifyContent="center"
         minWidth={["400px", "500px"]}
-        minHeight="800px"
         flexDirection="row"
       >
         {projectContent.map((object, i) => (

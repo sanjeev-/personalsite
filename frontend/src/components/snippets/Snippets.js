@@ -1,4 +1,3 @@
-import { SingleFieldSubscriptionsRule } from "graphql";
 import React from "react";
 import { Flex, Title, SubHead, Text, Link } from "../../designSystem";
 import { colors } from "../../designSystem/theme";
@@ -15,7 +14,7 @@ const Snippets = ({ snippets }) => {
       alignItems="center"
       backgroundColor={colors.grey[0]}
     >
-      <Flex pb={2}>
+      <Flex pb={4}>
         <Searchbar />
       </Flex>
       <Flex pt={2} width="100%">

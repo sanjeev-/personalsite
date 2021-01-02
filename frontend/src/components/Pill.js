@@ -1,16 +1,19 @@
 import React from "react";
 import { Flex, Text } from "../designSystem";
 
-const Pill = ({ fontColor, backgroundColor, text }) => {
+const Pill = ({ text, handle }) => {
+  const { formattedText, fontColor, backgroundColor } = handle(text);
   return (
     <Flex
       width={["100px"]}
-      height="35px"
+      height="30px"
       backgroundColor={backgroundColor}
+      justifyContent="center"
+      alignItems="center"
       borderRadius="10px"
     >
       <Text color={fontColor} fontSize={1}>
-        {text}
+        {formattedText}
       </Text>
     </Flex>
   );
