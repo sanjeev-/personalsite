@@ -30,6 +30,7 @@ const SnippetRow = ({ snippetName, category, language, preview, link }) => {
         px={3}
         minWidth="1000px"
         minHeight="100px"
+        style={{ cursor: "pointer" }}
         borderRadius="10px"
         border="1px solid"
         borderColor={isHovered ? colors.purple[0] : colors.grey[0]}
