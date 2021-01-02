@@ -42,7 +42,7 @@ const About = () => {
                 color={colors.grey[2]}
                 lineHeight="1.4em"
                 fontSize={2}
-                // pt={4}
+                pt={4}
               >
                 In my free time, I like to watch movies and hang out with my
                 dog.
