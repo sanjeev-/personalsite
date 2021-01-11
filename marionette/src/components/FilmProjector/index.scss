@@ -305,3 +305,10 @@ h1 {
   filter: hue-rotate(random()) saturate(2);
   transform: scale(1.1);
 }
+
+footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+}
