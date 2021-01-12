@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Flex, Text } from "../../designSystem";
+import Animation from "./Animation";
 import { colors } from "../../designSystem/theme";
 import "./index.scss";
 
@@ -46,19 +47,23 @@ const FilmProjector = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <div
-                onClick={(e) => {
-                  setintroVideoStart(true);
-                }}
-                className="filmproj"
-                style={{ cursor: "pointer" }}
-              >
-                <img
-                  width="100px"
-                  height="100px"
-                  src="https://marionetteapp-public-assets.s3.amazonaws.com/lp/apple_movie_camera.png"
-                />
-              </div>
+              {!introVideoStart ? (
+                <div
+                  onClick={(e) => {
+                    setintroVideoStart(true);
+                  }}
+                  className="filmproj"
+                  style={{ cursor: "pointer" }}
+                >
+                  <img
+                    width="100px"
+                    height="100px"
+                    src="https://marionetteapp-public-assets.s3.amazonaws.com/lp/apple_movie_camera.png"
+                  />
+                </div>
+              ) : (
+                <Animation />
+              )}
             </Flex>
           </Flex>
           <Flex

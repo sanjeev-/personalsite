@@ -312,3 +312,23 @@ footer {
   height: 200px;
   margin-top: -200px;
 }
+
+// Fargo animations
+
+.fargoCar {
+  animation: anim-move-car 15s;
+  filter: invert(35%);
+}
+@keyframes anim-move-car {
+  from {
+    transform: translateY(0%) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(1000%) scale(6);
+    opacity: 0.1;
+  }
+}
