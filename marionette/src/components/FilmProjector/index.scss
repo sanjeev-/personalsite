@@ -316,8 +316,9 @@ footer {
 // Fargo animations
 
 .fargoCar {
-  animation: anim-move-car 15s;
-  filter: invert(35%);
+  animation: anim-move-car 10s ease-in;
+  transition: all 0s;
+  filter: invert(40%) sepia();
 }
 @keyframes anim-move-car {
   from {
@@ -328,7 +329,7 @@ footer {
     opacity: 0.5;
   }
   to {
-    transform: translateY(1000%) scale(6);
-    opacity: 0.1;
+    transform: translateY(1400%) scale(7);
+    opacity: 0;
   }
 }

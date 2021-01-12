@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { Flex, Text } from "../../designSystem";
+import Welcome from "./Welcome";
 import "./index.scss";
 
-const Loading = () => {
+const FargoAnimation = () => {
   const [showTitle, setShowTitle] = useState(false);
   const [showAnimatedEmoji, setShowAnimatedEmoji] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(
     () => {
-      let animationTimer = setTimeout(() => setShowAnimatedEmoji(true), 0);
-      let titleTimer = setTimeout(() => setShowTitle(true), 15000);
+      let animationTimer = setTimeout(() => setShowAnimatedEmoji(true), 10);
+      let titleTimer = setTimeout(() => setShowTitle(true), 10000);
+      let endTitleTimer = setTimeout(() => setShowTitle(false), 13000);
+      let endAnimationTimer = setTimeout(
+        () => setShowAnimatedEmoji(false),
+        10000
+      );
+      let showMenuTimer = setTimeout(() => setShowMenu(true), 13000);
 
       // this will clear Timeout when component unmount like in willComponentUnmount
       return () => {
         clearTimeout(titleTimer);
+        clearTimeout(animationTimer);
+        clearTimeout(endTitleTimer);
+        clearTimeout(endAnimationTimer);
       };
     },
     [] //useEffect will run only one time
@@ -38,9 +49,10 @@ const Loading = () => {
             MARRIONETTE
           </Text>
         )}
+        {showMenu && <Welcome />}
       </Flex>
     </Flex>
   );
 };
 
-export default Loading;
+export default FargoAnimation;

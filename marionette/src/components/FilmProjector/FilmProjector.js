@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Flex, Text } from "../../designSystem";
-import Animation from "./Animation";
+import FargoAnimation from "./FargoAnimation";
 import { colors } from "../../designSystem/theme";
 import "./index.scss";
 
@@ -13,7 +13,7 @@ const FilmProjector = () => {
           position="absolute"
           width="100vw"
           height={introVideoStart ? "125px" : "0px"}
-          transition="all 1s ease-in-out"
+          transition="all 0.5s ease-in-out"
           backgroundColor="black"
         ></Flex>
         <div
@@ -62,7 +62,7 @@ const FilmProjector = () => {
                   />
                 </div>
               ) : (
-                <Animation />
+                <FargoAnimation />
               )}
             </Flex>
           </Flex>
@@ -71,7 +71,7 @@ const FilmProjector = () => {
             height={introVideoStart ? "125px" : "0px"}
             width="100%"
             backgroundColor="black"
-            transition="all 1s ease-in-out"
+            transition="all 0.5s ease-in-out"
             bottom="0"
             display="block"
             position="absolute"
