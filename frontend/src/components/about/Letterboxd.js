@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Flex, Text, Link } from "../../designSystem";
-import "./index.css";
 
-const GithubLink = ({ githubFileName, isProfile }) => {
-  const githubLink = isProfile
-    ? "https://github.com/sanjeev-"
-    : `https://github.com/sanjeev-/snippets/blob/main/${githubFileName}`;
+const Letterboxd = () => {
+  const githubLink = `https://letterboxd.com/_jeev/`;
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
@@ -13,19 +10,19 @@ const GithubLink = ({ githubFileName, isProfile }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <Flex>
-        <Flex style={{ display: "inline" }} pr={2}>
+        <Flex style={{ display: "inline" }}>
           <Link href={githubLink} target="_blank">
             {isHovered ? (
               <img
                 width="20px"
                 height="20px"
-                src="https://sanjeev-personal-site.s3.amazonaws.com/snippets/github_icon_hovered.png"
+                src="https://sanjeev-personal-site.s3.amazonaws.com/about/letterboxd_icon_hovered.png"
               />
             ) : (
               <img
                 width="20px"
                 height="20px"
-                src="https://sanjeev-personal-site.s3.amazonaws.com/snippets/github_icon.png"
+                src="https://sanjeev-personal-site.s3.amazonaws.com/about/letterboxd_icon.png"
               />
             )}
           </Link>
@@ -35,4 +32,4 @@ const GithubLink = ({ githubFileName, isProfile }) => {
   );
 };
 
-export default GithubLink;
+export default Letterboxd;

@@ -6,6 +6,7 @@ import {
   ROUTE_PROJECTS_BASE,
   ROUTE_ABOUT_BASE,
   ROUTE_SNIPPETS_BASE,
+  ROUTE_DESIGN_SYSTEM_BASE,
 } from "../../constants/route_constants";
 
 const HeaderLinks = ({ projectsActive, snippetsActive, aboutActive }) => {
@@ -29,6 +30,16 @@ const HeaderLinks = ({ projectsActive, snippetsActive, aboutActive }) => {
           textDecoration="none"
         >
           Snippets
+        </Link>
+      </Flex>
+      <Flex px={4}>
+        <Link
+          className="header-links"
+          href={ROUTE_DESIGN_SYSTEM_BASE}
+          color={snippetsActive ? colors.grey[3] : colors.grey[2]}
+          textDecoration="none"
+        >
+          Design system
         </Link>
       </Flex>
       <Flex px={4}>
