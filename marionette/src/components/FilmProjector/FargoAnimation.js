@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Flex, Text } from "../../designSystem";
+import { Flex, Text, SubHead } from "../../designSystem";
 import Welcome from "./Welcome";
 import "./index.scss";
 
@@ -11,7 +11,7 @@ const FargoAnimation = () => {
   useEffect(
     () => {
       let animationTimer = setTimeout(() => setShowAnimatedEmoji(true), 10);
-      let titleTimer = setTimeout(() => setShowTitle(true), 10000);
+      let titleTimer = setTimeout(() => setShowTitle(true), 11000);
       let endTitleTimer = setTimeout(() => setShowTitle(false), 13000);
       let endAnimationTimer = setTimeout(
         () => setShowAnimatedEmoji(false),
@@ -45,9 +45,15 @@ const FargoAnimation = () => {
           </Flex>
         )}
         {showTitle && (
-          <Text fontSize="60px" letterSpacing="60px" color="black">
+          <SubHead
+            fontSize="40px"
+            letterSpacing="60px"
+            color="black"
+            fontWeight="bold"
+            style={{ fontFamily: "Harmattan-Regular" }}
+          >
             MARRIONETTE
-          </Text>
+          </SubHead>
         )}
         {showMenu && <Welcome />}
       </Flex>

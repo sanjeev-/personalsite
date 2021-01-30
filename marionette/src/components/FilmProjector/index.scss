@@ -46,7 +46,7 @@ body {
   position: absolute;
   top: -5%;
   left: -5%;
-  opacity: 0.11;
+  opacity: 0.105;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/662025/grain.jpg")
     repeat center center;
   -webkit-animation: grain 0.5s steps(1) infinite;
@@ -329,7 +329,7 @@ footer {
     opacity: 0.5;
   }
   to {
-    transform: translateY(1400%) scale(7);
-    opacity: 0;
+    transform: translateY(1600%) scale(7);
+    opacity: 0.8;
   }
 }
