@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Flex, Title, SubHead, WhiteText } from "../../../designSystem";
+import React, { useState } from "react";
+import { Flex, Text } from "coppola";
 import moment from "moment";
-import Header from "../../Header.js";
-import zoraVid from "./videos/2020_06_14_hiking.mov";
 import retrieveZoraSnippets from "../../../graphql/queries/retrieveZoraSnippets.graphql";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
@@ -47,10 +45,8 @@ const ZoraProject = () => {
           bottom="25px"
           flexDirection="column"
         >
-          <WhiteText>{zoraSnippet.title}</WhiteText>
-          <WhiteText>
-            {moment(zoraSnippet.date).format("MMMM Do, YYYY")}
-          </WhiteText>
+          <Text>{zoraSnippet.title}</Text>
+          <Text>{moment(zoraSnippet.date).format("MMMM Do, YYYY")}</Text>
         </Flex>
         <video src={zoraSnippet.path} loop autoPlay muted />
       </Flex>

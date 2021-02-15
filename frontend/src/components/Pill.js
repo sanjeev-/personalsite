@@ -1,8 +1,8 @@
 import React from "react";
-import { Flex, Text } from "../designSystem";
+import { Flex, Text } from "coppola";
 
 const Pill = ({ text, handle }) => {
-  const { formattedText, fontColor, backgroundColor } = handle(text);
+  const { formattedText, backgroundColor } = handle(text);
   return (
     <Flex
       width={["100px"]}
@@ -12,7 +12,7 @@ const Pill = ({ text, handle }) => {
       alignItems="center"
       borderRadius="10px"
     >
-      <Text color={fontColor} fontSize={1}>
+      <Text color="black" fontSize={1}>
         {formattedText}
       </Text>
     </Flex>

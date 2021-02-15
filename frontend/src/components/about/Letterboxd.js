@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Text, Link } from "../../designSystem";
+import { Flex, Link } from "coppola";
 
 const Letterboxd = () => {
   const githubLink = `https://letterboxd.com/_jeev/`;

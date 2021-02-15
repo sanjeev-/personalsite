@@ -1,12 +1,12 @@
 import React from "react";
-import { Route, Link, Switch, BrowserRouter as Router } from "react-router-dom";
-import { Flex } from "../../designSystem";
+import { Route, Switch } from "react-router-dom";
+import { Flex } from "coppola";
 import ProjectsDashboard from "./ProjectsDashboard";
 import ZoraProject from "./UntitledZoraProject/ZoraProject";
 
 const ProjectsRouter = () => {
   return (
-    <Flex>
+    <Flex primary>
       <Switch>
         <Route exact path="/projects" component={ProjectsDashboard} />
         <Route exact path="/about" component={ProjectsDashboard} />

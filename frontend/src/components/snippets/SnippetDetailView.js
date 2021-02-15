@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import { Flex, Text, Link } from "../../designSystem";
+import { Flex, Text, Link } from "coppola";
 import { getFileFromGithub } from "../../utils/api";
 import { colors } from "../../designSystem/theme";
 import Header from "../Header.js";
@@ -41,12 +41,7 @@ const SnippetDetailView = ({ match }) => {
   getFileFromGithub(githubFileName).then((res) => setSnippet(res));
 
   return (
-    <Flex
-      minWidth="100vw"
-      minHeight="100vh"
-      flexDirection="column"
-      backgroundColor={colors.grey[0]}
-    >
+    <Flex primary minWidth="100vw" minHeight="100vh" flexDirection="column">
       <Flex px={5} py={4}>
         <Header snippetsActive />
       </Flex>
@@ -54,11 +49,7 @@ const SnippetDetailView = ({ match }) => {
         <Flex justifyContent="center" maxWidth="1000px" flexDirection="column">
           <Flex width="100%">
             <Flex pr={2} alignItems="center">
-              <Link
-                color={colors.grey[2]}
-                href={"/snippets"}
-                className="link-hover"
-              >
+              <Link href={"/snippets"} className="link-hover">
                 {" "}
                 Snippets
               </Link>
@@ -67,7 +58,7 @@ const SnippetDetailView = ({ match }) => {
               <Link color={colors.grey[2]}>/</Link>
             </Flex>
             <Flex alignItems="center">
-              <Text color={colors.beige[0]}> {snippetName}</Text>
+              <Text secondary> {snippetName}</Text>
             </Flex>
           </Flex>
           <Flex>
@@ -78,7 +69,7 @@ const SnippetDetailView = ({ match }) => {
               pt={5}
               pr={3}
             >
-              <Text color={colors.grey[3]} fontSize={2} lineHeight="1.5em">
+              <Text primary fontSize={2} lineHeight="1.5em">
                 {description}
               </Text>
               <Flex pt={4}>
@@ -86,11 +77,7 @@ const SnippetDetailView = ({ match }) => {
               </Flex>
             </Flex>
             <Flex flexDirection="column" px={2}>
-              <Flex
-                minHeight="400px"
-                borderRadius="10px"
-                backgroundColor={colors.grey[1]}
-              >
+              <Flex secondary minHeight="400px" borderRadius="10px">
                 <SyntaxHighlighter
                   language="python"
                   style={a11yDark}

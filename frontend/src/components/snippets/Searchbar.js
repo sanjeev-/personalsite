@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Text } from "../../designSystem";
+import { Flex } from "coppola";
 import { colors } from "../../designSystem/theme";
 
 const Searchbar = () => {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Text } from "../../designSystem";
+import { Flex, Text } from "coppola";
 import Pill from "../Pill.js";
 import { colors } from "../../designSystem/theme";
 import { toTitleCase } from "./utils";
@@ -35,17 +35,18 @@ const SnippetRow = ({ snippetName, category, language, preview, link }) => {
         border="1px solid"
         borderColor={isHovered ? colors.purple[0] : colors.grey[0]}
         transition="border-color 0.2s ease-in"
+        primary
       >
-        <Text color={colors.grey[3]} fontSize={2} textDecoration="none">
+        <Text fontSize={2} primary>
           {snippetName}
         </Text>
-        <Text color={colors.grey[3]} fontSize={2} textDecoration="none">
+        <Text primary fontSize={2}>
           <Pill text={category} handle={handlePill} />
         </Text>
-        <Text color={colors.grey[2]} fontSize={2} textDecoration="none">
+        <Text primary fontSize={2}>
           {toTitleCase(language)}
         </Text>
-        <Text color={colors.grey[2]} fontSize={2} textDecoration="none">
+        <Text primary fontSize={2}>
           {preview}
         </Text>
       </Flex>

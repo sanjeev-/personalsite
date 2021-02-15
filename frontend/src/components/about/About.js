@@ -1,18 +1,12 @@
 import React from "react";
-import { Flex, Text } from "../../designSystem";
-import { colors } from "../../designSystem/theme";
+import { Flex, Text } from "coppola";
 import Header from "../Header.js";
 import GithubLink from "../snippets/GithubLink";
 import Letterboxd from "./Letterboxd";
 
 const About = () => {
   return (
-    <Flex
-      minWidth="100vw"
-      minHeight="100vh"
-      flexDirection="column"
-      backgroundColor={colors.grey[0]}
-    >
+    <Flex minWidth="100vw" minHeight="100vh" flexDirection="column" primary>
       <Flex px={5} py={4}>
         <Header aboutActive />
       </Flex>
@@ -33,17 +27,12 @@ const About = () => {
             justifyContent="space-between"
           >
             <Flex flexDirection="column">
-              <Text color={colors.grey[2]} lineHeight="1.4em" fontSize={2}>
+              <Text fontSize={3} lineHeight="1.5em" primary>
                 Hi, my name is Sanjeev and I'm a developer & data scientist
                 living in NYC. I'm interested in building data products that are
                 pretty and useful and don't ruin the world.
               </Text>
-              <Text
-                color={colors.grey[2]}
-                lineHeight="1.4em"
-                fontSize={2}
-                pt={4}
-              >
+              <Text primary pt={2}>
                 In my free time, I like to watch movies and hang out with my
                 dog.
               </Text>

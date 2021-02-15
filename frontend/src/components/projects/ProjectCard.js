@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Text } from "../../designSystem";
-import { colors } from "../../designSystem/theme";
+import { Flex, Text } from "coppola";
 
 const ProjectCard = ({ title, subtitle, coverPhotoUrl, onClickRoute }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -12,6 +11,7 @@ const ProjectCard = ({ title, subtitle, coverPhotoUrl, onClickRoute }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <Flex
+          secondary
           width="400px"
           height="400px"
           flexDirection="column"
@@ -21,25 +21,19 @@ const ProjectCard = ({ title, subtitle, coverPhotoUrl, onClickRoute }) => {
           style={{ cursor: "pointer" }}
           mx={4}
           onClick={() => (window.location.href = onClickRoute)}
-          backgroundColor={colors.grey[1]}
           backgroundImage={`url(${coverPhotoUrl})`}
           filter={isHovered ? `grayscale(50%)` : `grayscale(100%)`}
           transition={"filter 0.25s ease-in-out"}
         />
         {isHovered && (
-          <Flex
-            backgroundColor={colors.grey[0]}
-            alignItems="center"
-            width="100%"
-            px={4}
-          >
+          <Flex primary alignItems="center" width="100%" px={4}>
             <Flex pr={2} alignItems="bottom">
-              <Text fontSize={2} fontWeight={700} color={colors.grey[3]}>
+              <Text primary fontSize={2} fontWeight={700}>
                 {title}
               </Text>
             </Flex>
             <Flex alignItems="bottom">
-              <Text color={colors.grey[2]} fontSize={1}>
+              <Text muted fontSize={2}>
                 {subtitle}
               </Text>
             </Flex>

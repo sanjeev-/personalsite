@@ -1,53 +1,18 @@
 import styled, { css } from "styled-components";
-import { colors } from "./theme";
 import {
-  system,
-
   // Spacing
   space,
   maxWidth,
   minWidth,
   width,
-  maxHeight,
-  minHeight,
-  height,
 
   // Layout
   position,
   display,
-  zIndex,
   top,
   right,
-  bottom,
-  left,
-  overflow,
-
-  // Flex
-  alignItems,
-  justifyContent,
-  justifyItems,
-  flexWrap,
-  flexDirection,
-  flex,
-  alignContent,
   justifySelf,
   alignSelf,
-  order,
-  flexBasis,
-
-  // Grid
-  gridGap,
-  gridRowGap,
-  gridColumnGap,
-  gridColumn,
-  gridRow,
-  gridArea,
-  gridAutoFlow,
-  gridAutoRows,
-  gridAutoColumns,
-  gridTemplateRows,
-  gridTemplateColumns,
-  gridTemplateAreas,
 
   // Typography
   color,
@@ -61,15 +26,9 @@ import {
   borders,
   borderColor,
   borderRadius,
-  boxShadow,
-  backgroundImage,
-  backgroundSize,
-  backgroundPosition,
-  backgroundRepeat,
 
   // Complex Styles
   textStyle,
-  buttonStyle,
 } from "styled-system";
 
 // Create a Text component that'll render an <h1> tag with some styles

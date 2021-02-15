@@ -1,6 +1,5 @@
 import React from "react";
-import { Flex, Title, SubHead, Text, Link } from "../../designSystem";
-import { colors } from "../../designSystem/theme";
+import { Flex } from "coppola";
 import SnippetRow from "./SnippetRow.js";
 import Searchbar from "./Searchbar.js";
 
@@ -12,7 +11,7 @@ const Snippets = ({ snippets }) => {
       borderRadius="8px"
       flexDirection="column"
       alignItems="center"
-      backgroundColor={colors.grey[0]}
+      primary
     >
       <Flex pb={4}>
         <Searchbar />

@@ -1,5 +1,8 @@
 import {
   system,
+  borders,
+  borderColor,
+  borderRadius,
 
   // Spacing
   space,
@@ -23,7 +26,6 @@ import {
   // Flex
   alignItems,
   justifyContent,
-  justifyItems,
   flexWrap,
   flexDirection,
   flex,
@@ -32,44 +34,21 @@ import {
   alignSelf,
   order,
   flexBasis,
-
-  // Grid
-  gridGap,
-  gridRowGap,
-  gridColumnGap,
   gridColumn,
   gridRow,
-  gridArea,
-  gridAutoFlow,
-  gridAutoRows,
-  gridAutoColumns,
-  gridTemplateRows,
-  gridTemplateColumns,
-  gridTemplateAreas,
-
   // Typography
   color,
   fontSize,
   fontWeight,
   textAlign,
   lineHeight,
-  letterSpacing,
-
-  // Decorative
-  borders,
-  borderColor,
-  borderRadius,
   boxShadow,
   backgroundImage,
   backgroundSize,
   backgroundPosition,
   backgroundRepeat,
-
-  // Complex Styles
-  textStyle,
-  buttonStyle,
 } from "styled-system";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 // Base Box component, use as a base to create more specific components
 export const Box = styled.div`

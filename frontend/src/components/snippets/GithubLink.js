@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Text, Link } from "../../designSystem";
+import { Flex, Link } from "coppola";
 import "./index.css";
 
 const GithubLink = ({ githubFileName, isProfile }) => {
