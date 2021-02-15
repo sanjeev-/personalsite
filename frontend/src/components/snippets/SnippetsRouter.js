@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, Link, Switch, BrowserRouter as Router } from "react-router-dom";
-import { Flex } from "../../designSystem";
+import { Route, Switch } from "react-router-dom";
+import { Flex } from "coppola";
 import SnippetsConnector from "./SnippetsConnector";
 import SnippetDetailView from "./SnippetDetailView";
 
