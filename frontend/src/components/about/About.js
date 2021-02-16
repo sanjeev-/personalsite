@@ -27,12 +27,12 @@ const About = () => {
             justifyContent="space-between"
           >
             <Flex flexDirection="column">
-              <Text fontSize={3} lineHeight="1.5em" primary>
+              <Text fontSize={3} lineHeight="1.3em" primary>
                 Hi, my name is Sanjeev and I'm a developer & data scientist
                 living in NYC. I'm interested in building data products that are
                 pretty and useful and don't ruin the world.
               </Text>
-              <Text primary pt={2}>
+              <Text primary pt={2} lineHeight="1.3em">
                 In my free time, I like to watch movies and hang out with my
                 dog.
               </Text>

@@ -10,23 +10,18 @@ const ProjectsDashboard = () => {
       <Flex px={5} py={4}>
         <Header projectsActive />
       </Flex>
-      <Flex
-        primary
-        mx={5}
-        my={4}
-        justifyContent="center"
-        minWidth={["400px", "500px"]}
-        flexDirection="row"
-      >
-        {projectContent.map((object, i) => (
-          <ProjectCard
-            key={i}
-            title={object.title}
-            subtitle={object.subtitle}
-            coverPhotoUrl={object.coverPhotoUrl}
-            onClickRoute={object.onClickRoute}
-          />
-        ))}
+      <Flex width="100%" justifyContent="center">
+        <Flex primary my={4} width="950px" flexDirection="row" flexWrap="wrap">
+          {projectContent.map((object, i) => (
+            <ProjectCard
+              key={i}
+              title={object.title}
+              subtitle={object.subtitle}
+              coverPhotoUrl={object.coverPhotoUrl}
+              onClickRoute={object.onClickRoute}
+            />
+          ))}
+        </Flex>
       </Flex>
     </Flex>
   );

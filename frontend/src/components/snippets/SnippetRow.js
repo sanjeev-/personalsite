@@ -37,16 +37,16 @@ const SnippetRow = ({ snippetName, category, language, preview, link }) => {
         transition="border-color 0.2s ease-in"
         primary
       >
-        <Text fontSize={2} primary>
+        <Text fontSize={2} fontWeight={400} primary>
           {snippetName}
         </Text>
-        <Text primary fontSize={2}>
+        <Text fontSize={2}>
           <Pill text={category} handle={handlePill} />
         </Text>
-        <Text primary fontSize={2}>
+        <Text secondary fontSize={2}>
           {toTitleCase(language)}
         </Text>
-        <Text primary fontSize={2}>
+        <Text muted fontSize={2}>
           {preview}
         </Text>
       </Flex>

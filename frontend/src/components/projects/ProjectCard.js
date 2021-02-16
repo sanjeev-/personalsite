@@ -4,7 +4,7 @@ import { Flex, Text } from "coppola";
 const ProjectCard = ({ title, subtitle, coverPhotoUrl, onClickRoute }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <>
+    <Flex pt={3}>
       <div
         height="400px"
         onMouseEnter={() => setIsHovered(true)}
@@ -25,22 +25,21 @@ const ProjectCard = ({ title, subtitle, coverPhotoUrl, onClickRoute }) => {
           filter={isHovered ? `grayscale(50%)` : `grayscale(100%)`}
           transition={"filter 0.25s ease-in-out"}
         />
-        {isHovered && (
-          <Flex primary alignItems="center" width="100%" px={4}>
-            <Flex pr={2} alignItems="bottom">
-              <Text primary fontSize={2} fontWeight={700}>
-                {title}
-              </Text>
-            </Flex>
-            <Flex alignItems="bottom">
-              <Text muted fontSize={2}>
-                {subtitle}
-              </Text>
-            </Flex>
+
+        <Flex primary alignItems="center" width="100%" px={4} height="50px">
+          <Flex pr={2} alignItems="bottom">
+            <Text primary fontSize={2} fontWeight={700}>
+              {isHovered && title}
+            </Text>
           </Flex>
-        )}
+          <Flex alignItems="bottom">
+            <Text muted fontSize={2}>
+              {isHovered && subtitle}
+            </Text>
+          </Flex>
+        </Flex>
       </div>
-    </>
+    </Flex>
   );
 };
 
