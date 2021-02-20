@@ -16,7 +16,7 @@ const Snippets = ({ snippets }) => {
       <Flex pb={4}>
         <Searchbar />
       </Flex>
-      <Flex pt={2} width="100%">
+      <Flex pt={2} width="100%" flexDirection="column">
         {snippets.map((snip, idx) => (
           <SnippetRow
             key={idx}

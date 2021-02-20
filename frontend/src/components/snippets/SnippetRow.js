@@ -11,6 +11,11 @@ const handlePill = (text) => {
       formattedText: "Data science",
       fontColor: colors.grey[0],
     },
+    BACK_END: {
+      backgroundColor: colors.purple[0],
+      formattedText: "Scripts",
+      fontColor: colors.grey[0],
+    },
   };
   return pillObject[text];
 };
@@ -37,16 +42,16 @@ const SnippetRow = ({ snippetName, category, language, preview, link }) => {
         transition="border-color 0.2s ease-in"
         primary
       >
-        <Text fontSize={2} fontWeight={400} primary>
+        <Text fontSize={2} fontWeight={400} primary width="35%">
           {snippetName}
         </Text>
-        <Text fontSize={2}>
+        <Text fontSize={2} width="20%">
           <Pill text={category} handle={handlePill} />
         </Text>
-        <Text secondary fontSize={2}>
+        <Text secondary fontSize={2} width="20%">
           {toTitleCase(language)}
         </Text>
-        <Text muted fontSize={2}>
+        <Text muted fontSize={2} width="25%">
           {preview}
         </Text>
       </Flex>

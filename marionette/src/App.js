@@ -1,13 +1,13 @@
 import React from "react";
 import "./index.scss";
-import FilmProjector from "./components/FilmProjector/FilmProjector";
+import { Welcome } from "./components/Welcome";
 
 import "./App.css";
 
 const MainApp = ({}) => {
   return (
     <>
-      <FilmProjector />
+      <Welcome />
     </>
   );
 };
