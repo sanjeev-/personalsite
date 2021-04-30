@@ -21,7 +21,7 @@ pathlib2==2.3.5
 promise==2.3
 python-dateutil==2.8.1
 requests==2.22.0
-rsa==3.4.2
+rsa==4.7
 s3transfer==0.3.3
 traitlets==4.3.3
 typing==3.7.4.1
